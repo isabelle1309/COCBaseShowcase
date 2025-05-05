@@ -24,7 +24,8 @@
 				}
 			},
 			"st": "2x Rage Towers",
-			"xb": "4x Ground Bows"
+			"xb": "4x Ground Bows",
+			"url": ""
 		},
 		"2": {
 			"cc": {
@@ -50,7 +51,8 @@
 				}
 			},
 			"st": "2x Poison Towers",
-			"xb": "4x Ground Bows"
+			"xb": "4x Ground Bows",
+			"url": ""
 		},
 		"3": {
 			"cc": {
@@ -76,7 +78,8 @@
 				}
 			},
 			"st": "2x Poison Towers",
-			"xb": "4x Ground Bows"
+			"xb": "4x Ground Bows",
+			"url": ""
 		},
 		"4": {
 			"cc": {
@@ -102,7 +105,8 @@
 				}
 			},
 			"st": "2x Poison Towers",
-			"xb": "4x Ground Bows"
+			"xb": "4x Ground Bows",
+			"url": ""
 		},
 		"5": {
 			"cc": {
@@ -128,7 +132,8 @@
 				}
 			},
 			"st": "2x Poison Towers",
-			"xb": "2x Ground Bows & 2x Multi Bows"
+			"xb": "2x Ground Bows & 2x Multi Bows",
+			"url": ""
 		},
 		"6": {
 			"cc": {
@@ -154,7 +159,8 @@
 				}
 			},
 			"st": "2x Poison Towers",
-			"xb": "4x Ground Bows"
+			"xb": "4x Ground Bows",
+			"url": ""
 		},
 		"7": {
 			"cc": {
@@ -180,7 +186,8 @@
 				}
 			},
 			"st": "2x Rage Towers",
-			"xb": "4x Ground Bows"
+			"xb": "4x Ground Bows",
+			"url": ""
 		},
 		"8": {
 			"cc": {
@@ -206,7 +213,8 @@
 				}
 			},
 			"st": "1x Rage Tower & 1x Poison Tower",
-			"xb": "4x Ground Bows"
+			"xb": "4x Ground Bows",
+			"url": ""
 		},
 		"9": {
 			"cc": {
@@ -232,7 +240,8 @@
 				}
 			},
 			"st": "2x Poison Towers",
-			"xb": "4x Ground Bows"
+			"xb": "4x Ground Bows",
+			"url": ""
 		},
 		"10": {
 			"cc": {
@@ -258,7 +267,8 @@
 				}
 			},
 			"st": "2x Rage Towers",
-			"xb": "3x Ground Bows & 1x Multi Bow"
+			"xb": "3x Ground Bows & 1x Multi Bow",
+			"url": ""
 		},
 		"11": {
 			"cc": {
@@ -284,7 +294,8 @@
 				}
 			},
 			"st": "2x Rage Towers",
-			"xb": "2x Ground Bows & 2x Multi Bows"
+			"xb": "2x Ground Bows & 2x Multi Bows",
+			"url": ""
 		},
 		"12": {
 			"cc": {
@@ -310,7 +321,8 @@
 				}
 			},
 			"st": "2x Poison Towers",
-			"xb": "4x Ground Bows"
+			"xb": "4x Ground Bows",
+			"url": ""
 		},
 		"13": {
 			"cc": {
@@ -336,7 +348,8 @@
 				}
 			},
 			"st": "2x Poison Towers",
-			"xb": "4x Ground Bows"
+			"xb": "4x Ground Bows",
+			"url": ""
 		},
 		"14": {
 			"cc": {
@@ -362,7 +375,8 @@
 				}
 			},
 			"st": "2x Poison Towers",
-			"xb": "4x Ground Bows"
+			"xb": "4x Ground Bows",
+			"url": ""
 		},
 		"15": {
 			"cc": {
@@ -388,7 +402,8 @@
 				}
 			},
 			"st": "2x Poison Towers",
-			"xb": "4x Ground Bows"
+			"xb": "4x Ground Bows",
+			"url": ""
 		}
 	}
 }

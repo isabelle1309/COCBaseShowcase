@@ -100,16 +100,21 @@ docReady(() => {
       ccTextEl.textContent = '';
       stTextEl.textContent = '';
       xbTextEl.textContent = '';
-      currentBaseLabel.textContent = 'Base –';
+      currentBaseLabel.textContent = 'Base -';
       updateBaseNav();
       return;
     }
 
     const month = months[monthIndex];
     const entry = bases[baseIndex];
+    console.log(entry);
+    
 
-    currentBaseLabel.textContent = `Base ${baseIndex + 1}`;
+    currentBaseLabel.textContent = `Base ${baseIndex + 1}`;
     updateBaseNav();
+
+    
+    
 
     imgEl.src = `${BASE_URL}/${month}/${baseIndex + 1}.png`;
     imgEl.alt = `Base ${baseIndex + 1}`;

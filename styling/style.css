@@ -1,3 +1,7 @@
+.center{
+	text-align: center;
+}
+
 html,
 body {
 	margin: 0;
@@ -7,17 +11,13 @@ body {
 	font-family: "Rockwell", -apple-system, Arial, sans-serif;
 }
 
-#nav{
-    text-align: center;
+#nav {
 	padding-top: 2vh;
 }
 
-#nav #current-month, #nav #current-base{
-    color: white;
-}
-
-#showcase {
-	text-align: center;
+#nav #current-month,
+#nav #current-base {
+	color: white;
 }
 
 #showcase img {
@@ -46,7 +46,8 @@ body {
 }
 
 #title,
-#baseNum {
+#baseNum,
+#baseLink a {
 	color: #ff006e;
 }
 
@@ -75,11 +76,15 @@ body {
 	color: white;
 }
 
-#showcase #github{
+#showcase #github {
 	height: 10vh;
 	width: auto;
 	position: fixed;
 	left: 0;
 	top: 0;
 	padding-bottom: 0;
+}
+
+#baseLink a {
+	text-decoration: none;
 }
