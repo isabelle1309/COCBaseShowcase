@@ -54,7 +54,6 @@ body {
 	display: flex;
 	flex-direction: row;
 	justify-content: center;
-	gap: 4vw;
 }
 
 .info-section {
@@ -62,7 +61,7 @@ body {
 	flex-direction: column;
 	align-items: center;
 	text-align: center;
-	width: 20vw;
+	width: 26vw;
 }
 
 .info-section img {

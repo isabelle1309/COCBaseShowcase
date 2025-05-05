@@ -1,4 +1,3 @@
-// GH images folder
 const BASE_URL = 'https://raw.githubusercontent.com/isabelle1309/COCBaseShowcase/main/images';
 
 let months = [];
@@ -6,15 +5,12 @@ let monthIndex = 0;
 let bases = [];
 let baseIndex = 0;
 
-// Preload images
+// Preload helper
 function preloadImages(urls) {
-  urls.forEach(url => {
-    const img = new Image();
-    img.src = url;
-  });
+  urls.forEach(url => { new Image().src = url; });
 }
 
-// Make sure DOM is loaded
+// DOM‑ready helper
 function docReady(fn) {
   if (document.readyState !== 'loading') fn();
   else document.addEventListener('DOMContentLoaded', fn);
@@ -32,80 +28,60 @@ docReady(() => {
   const stTextEl          = document.getElementById('stText');
   const xbTextEl          = document.getElementById('xbText');
 
-  // Load months from json
+  // Load months json
   fetch(`${BASE_URL}/months.json`)
-    .then(resp => resp.text())
+    .then(r => r.text())
     .then(text => {
       const cleaned = text.trim().replace(/^\uFEFF/, '');
-      const data    = JSON.parse(cleaned);
-      months       = data.months || [];
+      months       = JSON.parse(cleaned).months || [];
+      // Start on the latest month
+      monthIndex   = months.length - 1;
       updateMonthNav();
       loadMonth();
     })
     .catch(err => console.error('Failed to load months.json', err));
 
-  // Month nav
-  prevMonthBtn.addEventListener('click', () => {
-    if (monthIndex > 0) {
-      monthIndex--;
-      loadMonth();
-    }
-  });
-  nextMonthBtn.addEventListener('click', () => {
-    if (monthIndex < months.length - 1) {
-      monthIndex++;
-      loadMonth();
-    }
-  });
+  // Month buttons
+  prevMonthBtn.onclick = () => {
+    if (monthIndex > 0) { monthIndex--; loadMonth(); }
+  };
+  nextMonthBtn.onclick = () => {
+    if (monthIndex < months.length - 1) { monthIndex++; loadMonth(); }
+  };
 
-  // Base nav
-  prevBaseBtn.addEventListener('click', () => {
-    if (baseIndex > 0) {
-      baseIndex--;
-      renderBase();
-    }
-  });
-  nextBaseBtn.addEventListener('click', () => {
-    if (baseIndex < bases.length - 1) {
-      baseIndex++;
-      renderBase();
-    }
-  });
+  // Base buttons
+  prevBaseBtn .onclick = () => { if (baseIndex > 0) { baseIndex--; renderBase(); } };
+  nextBaseBtn .onclick = () => { if (baseIndex < bases.length - 1) { baseIndex++; renderBase(); } };
 
-  // Keyboard nav
+  // Arrow‑key support
   document.addEventListener('keydown', e => {
     if (!bases.length) return;
-    if (e.key === 'ArrowLeft' && baseIndex > 0) prevBaseBtn.click();
+    if (e.key === 'ArrowLeft'  && baseIndex > 0)           prevBaseBtn.click();
     if (e.key === 'ArrowRight' && baseIndex < bases.length - 1) nextBaseBtn.click();
   });
 
-  // Load month JSON data
+  // Load month JSON, build base arr and preload images
   function loadMonth() {
     const month = months[monthIndex] || '';
-    currentMonthLabel.textContent = month;
+    currentMonthLabel.textContent = formatMonthLabel(month);
     updateMonthNav();
 
     fetch(`${BASE_URL}/${month}/${month}.json`)
-      .then(resp => resp.text())
+      .then(r => r.text())
       .then(text => {
-        const cleaned = text.trim().replace(/^\uFEFF/, '');
-        const data    = JSON.parse(cleaned);
+        const data    = JSON.parse(text.trim().replace(/^\uFEFF/, ''));
         const baseObj = data[month] || {};
 
-        // Convert object into array
-        bases = Object
-          .keys(baseObj)
-          .sort((a, b) => Number(a) - Number(b))
-          .map(key => baseObj[key]);
+        // object → sorted array
+        bases = Object.keys(baseObj)
+          .sort((a,b) => +a - +b)
+          .map(k => baseObj[k]);
 
-        // Create image urls
-        const imgURLs = Object
-          .keys(baseObj)
-          .sort((a, b) => Number(a) - Number(b))
-          .map(key => `${BASE_URL}/${month}/${key}.png`);
-
-        // Preload images
-        preloadImages(imgURLs);
+        // preload
+        const urls = Object.keys(baseObj)
+          .sort((a,b) => +a - +b)
+          .map(k => `${BASE_URL}/${month}/${k}.png`);
+        preloadImages(urls);
 
         baseIndex = 0;
         updateBaseNav();
@@ -113,58 +89,59 @@ docReady(() => {
       })
       .catch(err => {
         console.error(`Failed to load ${month}.json`, err);
-        bases = [];
-        baseIndex = 0;
-        renderBase();
+        bases = []; baseIndex = 0; renderBase();
       });
   }
 
-  // Render current base
+  // Render CC / ST / XB and image
   function renderBase() {
-    // If there's no bases, clear UI and kill
     if (!bases.length) {
-      imgEl.src     = '';
-      imgEl.alt     = '';
+      imgEl.src = ''; imgEl.alt = '';
       ccTextEl.textContent = '';
       stTextEl.textContent = '';
       xbTextEl.textContent = '';
-      updateBaseNav();
       currentBaseLabel.textContent = 'Base –';
+      updateBaseNav();
       return;
     }
 
     const month = months[monthIndex];
     const entry = bases[baseIndex];
 
-    // Update base nav state & label
-    updateBaseNav();
     currentBaseLabel.textContent = `Base ${baseIndex + 1}`;
+    updateBaseNav();
 
-    // Set base image
     imgEl.src = `${BASE_URL}/${month}/${baseIndex + 1}.png`;
     imgEl.alt = `Base ${baseIndex + 1}`;
 
-    // Populate CC text
-    ccTextEl.textContent = Object
-      .values(entry.cc || {})
-      .filter(t => t.name)
-      .map(t => `${t.amount}× ${t.name}`)
-      .join(', ') || 'N/A';
-
-    // Populate ST and XB
+    ccTextEl.textContent = Object.values(entry.cc || {})
+      .filter(t => t.name).map(t => `${t.amount}× ${t.name}`).join(', ') || 'N/A';
     stTextEl.textContent = entry.st || 'N/A';
     xbTextEl.textContent = entry.xb || 'N/A';
   }
 
-  // Enable/disable month buttons
+  // Helpers to toggle buttons
   function updateMonthNav() {
     prevMonthBtn.disabled = monthIndex === 0;
     nextMonthBtn.disabled = monthIndex >= months.length - 1;
   }
-
-  // Enable/disable base buttons
   function updateBaseNav() {
     prevBaseBtn.disabled = baseIndex === 0;
     nextBaseBtn.disabled = baseIndex >= bases.length - 1;
+  }
+
+  // Month formatting
+  const monthNames = {
+    jan: 'January', feb: 'February', mar: 'March',
+    apr: 'April',   may: 'May',      jun: 'June',
+    jul: 'July',    aug: 'August',   sep: 'September',
+    oct: 'October', nov: 'November', dec: 'December'
+  };
+  function formatMonthLabel(abbr) {
+    const m = abbr.slice(0,3).toLowerCase();
+    const y = abbr.slice(3);
+    return monthNames[m] && y
+      ? `${monthNames[m]} 20${y}`
+      : abbr;
   }
 });
