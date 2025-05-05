@@ -74,3 +74,12 @@ body {
 	font-size: 1rem;
 	color: white;
 }
+
+#showcase #github{
+	height: 10vh;
+	width: auto;
+	position: fixed;
+	left: 0;
+	top: 0;
+	padding-bottom: 0;
+}
