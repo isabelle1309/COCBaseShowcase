@@ -12,7 +12,7 @@ body {
 	padding-top: 2vh;
 }
 
-#nav *{
+#nav #current-month, #nav #current-base{
     color: white;
 }
 
