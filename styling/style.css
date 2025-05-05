@@ -1,0 +1,62 @@
+html{
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+#showcase{
+    text-align: center;
+}
+
+#showcase img{
+    width: 60vw;
+    padding-bottom: 2vh;
+}
+
+#showcase #clancastle, #showcase #spelltower, #showcase #xbow{
+    height: 8vw;
+    width: auto;
+}
+
+#nav a{
+    position: fixed;
+    text-decoration: none;
+}
+
+#nav #prev{
+    left: 10px;
+}
+
+#nav #next{
+    right: 10px;
+}
+
+#title, #baseNum{
+    color: #ff006e;
+}
+
+#baseInfo {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 4vw;
+}
+
+.info-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 20vw;
+}
+
+.info-section img {
+    height: 10vw;
+    width: auto;
+}
+
+.info-text {
+    margin-top: 1vh;
+    font-size: 1rem;
+    color: white;
+}
