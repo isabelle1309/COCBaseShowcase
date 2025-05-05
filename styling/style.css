@@ -1,64 +1,73 @@
-html{
-    margin: 0;
-    padding: 0;
-    border: 0;
-    background-color: #181A1B;
-    font-family: Rockwell, Arial, Calibri;
+@font-face {
+	font-family: "Rockwell";
+	src: url("/fonts/Rockwell.woff2") format("woff2");
 }
 
-#showcase{
-    text-align: center;
+html,
+body {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	background-color: #181a1b;
+	font-family: "Rockwell", -apple-system, Arial, sans-serif;
 }
 
-#showcase img{
-    width: 60vw;
-    padding-bottom: 2vh;
+#showcase {
+	text-align: center;
 }
 
-#showcase #clancastle, #showcase #spelltower, #showcase #xbow{
-    height: 8vw;
-    width: auto;
+#showcase img {
+	width: 60vw;
+	padding-bottom: 2vh;
 }
 
-#nav a{
-    position: fixed;
-    text-decoration: none;
+#showcase #clancastle,
+#showcase #spelltower,
+#showcase #xbow {
+	height: 8vw;
+	width: auto;
 }
 
-#nav #prev{
-    left: 10px;
+#nav a {
+	position: fixed;
+	text-decoration: none;
 }
 
-#nav #next{
-    right: 10px;
+#nav #prev {
+	left: 10px;
 }
 
-#title, #baseNum{
-    color: #ff006e;
+#nav #next {
+	right: 10px;
+}
+
+#title,
+#baseNum {
+	color: #ff006e;
 }
 
 #baseInfo {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    gap: 4vw;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	gap: 4vw;
 }
 
 .info-section {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    width: 20vw;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	text-align: center;
+	width: 20vw;
 }
 
 .info-section img {
-    height: 10vw;
-    width: auto;
+	height: 10vw;
+	width: auto;
 }
 
 .info-text {
-    margin-top: 1vh;
-    font-size: 1rem;
-    color: white;
+	margin-top: 1vh;
+	font-size: 1rem;
+	color: white;
 }
