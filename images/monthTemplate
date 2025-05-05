@@ -1,18 +1,18 @@
 {
-	"mar25": {
+	"x2x": {
 		"1": {
 			"cc": {
 				"1": {
-					"name": "Ice Golem",
-					"amount": "2"
+					"name": "",
+					"amount": ""
 				},
 				"2": {
-					"name": "Rocket Balloon",
-					"amount": "2"
+					"name": "",
+					"amount": ""
 				},
 				"3": {
-					"name": "Archer",
-					"amount": "9"
+					"name": "",
+					"amount": ""
 				},
 				"4": {
 					"name": "",
@@ -29,16 +29,16 @@
 		"2": {
 			"cc": {
 				"1": {
-					"name": "Furnace",
-					"amount": "1"
+					"name": "",
+					"amount": ""
 				},
 				"2": {
-					"name": "Ice Golem",
-					"amount": "2"
+					"name": "",
+					"amount": ""
 				},
 				"3": {
-					"name": "Archer",
-					"amount": "7"
+					"name": "",
+					"amount": ""
 				},
 				"4": {
 					"name": "",
@@ -55,16 +55,16 @@
 		"3": {
 			"cc": {
 				"1": {
-					"name": "Furnace",
-					"amount": "1"
+					"name": "",
+					"amount": ""
 				},
 				"2": {
-					"name": "Ice Golem",
-					"amount": "2"
+					"name": "",
+					"amount": ""
 				},
 				"3": {
-					"name": "Archer",
-					"amount": "7"
+					"name": "",
+					"amount": ""
 				},
 				"4": {
 					"name": "",
@@ -81,16 +81,16 @@
 		"4": {
 			"cc": {
 				"1": {
-					"name": "Witch",
-					"amount": "2"
+					"name": "",
+					"amount": ""
 				},
 				"2": {
-					"name": "Ice Golem",
-					"amount": "2"
+					"name": "",
+					"amount": ""
 				},
 				"3": {
-					"name": "Archer",
-					"amount": "7"
+					"name": "",
+					"amount": ""
 				},
 				"4": {
 					"name": "",
@@ -107,16 +107,16 @@
 		"5": {
 			"cc": {
 				"1": {
-					"name": "Ice Golem",
-					"amount": "2"
+					"name": "",
+					"amount": ""
 				},
 				"2": {
-					"name": "Witch",
-					"amount": "1"
+					"name": "",
+					"amount": ""
 				},
 				"3": {
-					"name": "Archer",
-					"amount": "13"
+					"name": "",
+					"amount": ""
 				},
 				"4": {
 					"name": "",
@@ -133,16 +133,16 @@
 		"6": {
 			"cc": {
 				"1": {
-					"name": "Ice Golem",
-					"amount": "3"
+					"name": "",
+					"amount": ""
 				},
 				"2": {
-					"name": "Headhunter",
-					"amount": "1"
+					"name": "",
+					"amount": ""
 				},
 				"3": {
-					"name": "Archer",
-					"amount": "4"
+					"name": "",
+					"amount": ""
 				},
 				"4": {
 					"name": "",
@@ -159,16 +159,16 @@
 		"7": {
 			"cc": {
 				"1": {
-					"name": "Ice Golem",
-					"amount": "2"
+					"name": "",
+					"amount": ""
 				},
 				"2": {
-					"name": "Rocket Balloon",
-					"amount": "3"
+					"name": "",
+					"amount": ""
 				},
 				"3": {
-					"name": "Archer",
-					"amount": "1"
+					"name": "",
+					"amount": ""
 				},
 				"4": {
 					"name": "",
@@ -185,16 +185,16 @@
 		"8": {
 			"cc": {
 				"1": {
-					"name": "Furnace",
-					"amount": "1"
+					"name": "",
+					"amount": ""
 				},
 				"2": {
-					"name": "Ice Golem",
-					"amount": "2"
+					"name": "",
+					"amount": ""
 				},
 				"3": {
-					"name": "Archer",
-					"amount": "7"
+					"name": "",
+					"amount": ""
 				},
 				"4": {
 					"name": "",
@@ -211,16 +211,16 @@
 		"9": {
 			"cc": {
 				"1": {
-					"name": "Ice Golem",
-					"amount": "3"
+					"name": "",
+					"amount": ""
 				},
 				"2": {
-					"name": "Rocket Balloon",
-					"amount": "1"
+					"name": "",
+					"amount": ""
 				},
 				"3": {
-					"name": "Archer",
-					"amount": "2"
+					"name": "",
+					"amount": ""
 				},
 				"4": {
 					"name": "",
@@ -237,16 +237,16 @@
 		"10": {
 			"cc": {
 				"1": {
-					"name": "Furnace",
-					"amount": "1"
+					"name": "",
+					"amount": ""
 				},
 				"2": {
-					"name": "Ice Golem",
-					"amount": "2"
+					"name": "",
+					"amount": ""
 				},
 				"3": {
-					"name": "Archer",
-					"amount": "7"
+					"name": "",
+					"amount": ""
 				},
 				"4": {
 					"name": "",
@@ -263,16 +263,16 @@
 		"11": {
 			"cc": {
 				"1": {
-					"name": "Ice Golem",
-					"amount": "2"
+					"name": "",
+					"amount": ""
 				},
 				"2": {
-					"name": "Rocket Balloon",
-					"amount": "2"
+					"name": "",
+					"amount": ""
 				},
 				"3": {
-					"name": "Archer",
-					"amount": "1"
+					"name": "",
+					"amount": ""
 				},
 				"4": {
 					"name": "",
@@ -289,12 +289,12 @@
 		"12": {
 			"cc": {
 				"1": {
-					"name": "Ice Golem",
-					"amount": "2"
+					"name": "",
+					"amount": ""
 				},
 				"2": {
-					"name": "Archer",
-					"amount": "25"
+					"name": "",
+					"amount": ""
 				},
 				"3": {
 					"name": "",
@@ -315,16 +315,16 @@
 		"13": {
 			"cc": {
 				"1": {
-					"name": "Ice Golem",
-					"amount": "2"
+					"name": "",
+					"amount": ""
 				},
 				"2": {
-					"name": "Witch",
-					"amount": "1"
+					"name": "",
+					"amount": ""
 				},
 				"3": {
-					"name": "Archer",
-					"amount": "13"
+					"name": "",
+					"amount": ""
 				},
 				"4": {
 					"name": "",
@@ -341,16 +341,16 @@
 		"14": {
 			"cc": {
 				"1": {
-					"name": "Furnace",
-					"amount": "1"
+					"name": "",
+					"amount": ""
 				},
 				"2": {
-					"name": "Ice Golem",
-					"amount": "2"
+					"name": "",
+					"amount": ""
 				},
 				"3": {
-					"name": "Archer",
-					"amount": "7"
+					"name": "",
+					"amount": ""
 				},
 				"4": {
 					"name": "",
@@ -367,16 +367,16 @@
 		"15": {
 			"cc": {
 				"1": {
-					"name": "Ice Golem",
-					"amount": "2"
+					"name": "",
+					"amount": ""
 				},
 				"2": {
-					"name": "Rocket Balloon",
-					"amount": "3"
+					"name": "",
+					"amount": ""
 				},
 				"3": {
-					"name": "Archer",
-					"amount": "1"
+					"name": "",
+					"amount": ""
 				},
 				"4": {
 					"name": "",
