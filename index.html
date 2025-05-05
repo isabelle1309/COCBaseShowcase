@@ -1,38 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styling/style.css">
-    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
-    <script src="scripts/script.js" defer></script>
-    <title>Base Showcase</title>
-</head>
-<body>
-    <div id="nav">
-        <a href="#" id="prev"></a>
-        <a href="#" id="next"></a>
-    </div>
-    <div id="showcase">
-        <h1 id="title">TH17 CWL Bases (05/2025)</h1>
-        <hr>
-        <h2 id="baseNum">Base number will display after JSON data is selected.</h2>
-        <img src="" alt="Select JSON data below to show base information." id="baseImg">
-        <div id="baseInfo">
-            <div class="info-section">
-                <img src="images/CC.png" alt="Clan Castle Image" id="clancastle">
-                <p id="ccText" class="info-text">Clan Castle Details</p>
-            </div>
-            <div class="info-section">
-                <img src="images/ST.png" alt="Spell Tower Image" id="spelltower">
-                <p id="stText" class="info-text">Spell Tower Configuration</p>
-            </div>
-            <div class="info-section">
-                <img src="images/xbow.png" alt="X-bow Image" id="xbow">
-                <p id="xbText" class="info-text">X-bow Configuration</p>
-            </div>
-        </div>        
-    </div>
-    <input id="fileInput" type="file" accept=".json" />
-</body>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="styling/style.css" />
+		<link
+			rel="shortcut icon"
+			href="images/favicon.ico"
+			type="image/x-icon"
+		/>
+		<script src="scripts/script.js" defer></script>
+		<title>COC CWL Base Showcase</title>
+	</head>
+	<body>
+		<div id="nav">
+			<!-- Month navigation -->
+			<nav id="nav-month" class="nav-bar">
+				<button id="prev-month" disabled>← Prev Month</button>
+				<span id="current-month">Loading months…</span>
+				<button id="next-month" disabled>Next Month →</button>
+			</nav>
+
+			<!-- Base navigation -->
+			<nav id="nav-base" class="nav-bar">
+				<button id="prev-base" disabled>← Prev Base</button>
+				<span id="current-base">Base 1</span>
+				<button id="next-base" disabled>Next Base →</button>
+			</nav>
+		</div>
+
+		<!-- Showcase area -->
+		<section id="showcase">
+			<h1 id="title">COC CWL Bases</h1>
+			<hr />
+
+			<img id="baseImg" src="" alt="Selected base layout" />
+
+			<div id="baseInfo">
+				<div class="info-section">
+					<img
+						id="clancastle"
+						src="images/CC.png"
+						alt="Clan Castle"
+					/>
+					<p id="ccText" class="info-text"></p>
+				</div>
+				<div class="info-section">
+					<img
+						id="spelltower"
+						src="images/ST.png"
+						alt="Spell Tower"
+					/>
+					<p id="stText" class="info-text"></p>
+				</div>
+				<div class="info-section">
+					<img id="xbow" src="images/xbow.png" alt="X‑bow" />
+					<p id="xbText" class="info-text"></p>
+				</div>
+			</div>
+		</section>
+	</body>
 </html>
