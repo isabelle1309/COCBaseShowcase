@@ -23,8 +23,8 @@
 					"amount": ""
 				}
 			},
-			"st": "",
-			"xb": ""
+			"st": "2x Poison Towers",
+			"xb": "4x Ground Bows"
 		},
 		"2": {
 			"cc": {
@@ -49,8 +49,8 @@
 					"amount": ""
 				}
 			},
-			"st": "",
-			"xb": ""
+			"st": "2x Rage Towers",
+			"xb": "4x Ground Bows"
 		},
 		"3": {
 			"cc": {
@@ -75,8 +75,8 @@
 					"amount": ""
 				}
 			},
-			"st": "",
-			"xb": ""
+			"st": "2x Rage Towers",
+			"xb": "3x Ground Bows & 1x Multi Bow"
 		},
 		"4": {
 			"cc": {
@@ -101,8 +101,8 @@
 					"amount": ""
 				}
 			},
-			"st": "",
-			"xb": ""
+			"st": "2x Rage Towers",
+			"xb": "4x Ground Bows"
 		},
 		"5": {
 			"cc": {
@@ -127,8 +127,8 @@
 					"amount": ""
 				}
 			},
-			"st": "",
-			"xb": ""
+			"st": "2x Rage Towers",
+			"xb": "4x Ground Bows"
 		},
 		"6": {
 			"cc": {
@@ -153,8 +153,8 @@
 					"amount": ""
 				}
 			},
-			"st": "",
-			"xb": ""
+			"st": "2x Rage Towers",
+			"xb": "2x Ground Bows & 2x Multi Bows"
 		},
 		"7": {
 			"cc": {
@@ -179,8 +179,8 @@
 					"amount": ""
 				}
 			},
-			"st": "",
-			"xb": ""
+			"st": "2x Rage Towers",
+			"xb": "4x Ground Bows"
 		},
 		"8": {
 			"cc": {
@@ -205,8 +205,8 @@
 					"amount": ""
 				}
 			},
-			"st": "",
-			"xb": ""
+			"st": "2x Rage Towers",
+			"xb": "4x Ground Bows"
 		},
 		"9": {
 			"cc": {
@@ -231,8 +231,8 @@
 					"amount": ""
 				}
 			},
-			"st": "",
-			"xb": ""
+			"st": "2x Poison Towers",
+			"xb": "4x Ground Bows"
 		},
 		"10": {
 			"cc": {
@@ -257,8 +257,8 @@
 					"amount": ""
 				}
 			},
-			"st": "",
-			"xb": ""
+			"st": "2x Rage Towers",
+			"xb": "4x Ground Bows"
 		},
 		"11": {
 			"cc": {
@@ -283,8 +283,8 @@
 					"amount": ""
 				}
 			},
-			"st": "",
-			"xb": ""
+			"st": "2x Rage Towers",
+			"xb": "4x Ground Bows"
 		},
 		"12": {
 			"cc": {
@@ -309,8 +309,8 @@
 					"amount": ""
 				}
 			},
-			"st": "",
-			"xb": ""
+			"st": "2x Poison Towers",
+			"xb": "4x Ground Bows"
 		},
 		"13": {
 			"cc": {
@@ -335,8 +335,8 @@
 					"amount": ""
 				}
 			},
-			"st": "",
-			"xb": ""
+			"st": "1x Rage Tower & 1x Poison Tower",
+			"xb": "4x Ground Bows"
 		},
 		"14": {
 			"cc": {
@@ -361,8 +361,8 @@
 					"amount": ""
 				}
 			},
-			"st": "",
-			"xb": ""
+			"st": "2x Poison Towers",
+			"xb": "4x Ground Bows"
 		},
 		"15": {
 			"cc": {
@@ -387,8 +387,8 @@
 					"amount": ""
 				}
 			},
-			"st": "",
-			"xb": ""
+			"st": "2x Rage Towers",
+			"xb": "4x Ground Bows"
 		}
 	}
 }
