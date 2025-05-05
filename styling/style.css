@@ -12,7 +12,7 @@ body {
 }
 
 #nav {
-	padding-top: 2vh;
+	padding-top: 1vh;
 }
 
 #nav #current-month,
@@ -22,7 +22,7 @@ body {
 
 #showcase img {
 	width: 60vw;
-	padding-bottom: 2vh;
+	padding-bottom: 1vh;
 }
 
 #showcase #clancastle,
@@ -47,7 +47,7 @@ body {
 
 #title,
 #baseNum,
-#baseLink a {
+#baseLink{
 	color: #ff006e;
 }
 
@@ -85,6 +85,6 @@ body {
 	padding-bottom: 0;
 }
 
-#baseLink a {
+#baseLink{
 	text-decoration: none;
 }
