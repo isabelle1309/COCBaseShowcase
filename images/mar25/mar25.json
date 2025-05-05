@@ -1,0 +1,394 @@
+{
+	"may25": {
+		"1": {
+			"cc": {
+				"1": {
+					"name": "Ice Golem",
+					"amount": "2"
+				},
+				"2": {
+					"name": "Furnace",
+					"amount": "1"
+				},
+				"3": {
+					"name": "Headhunter",
+					"amount": "1"
+				},
+				"4": {
+					"name": "Archer",
+					"amount": "1"
+				},
+				"5": {
+					"name": "",
+					"amount": ""
+				}
+			},
+			"st": "2x Rage Towers",
+			"xb": "4x Ground Bows"
+		},
+		"2": {
+			"cc": {
+				"1": {
+					"name": "Ice Golem",
+					"amount": "2"
+				},
+				"2": {
+					"name": "Furnace",
+					"amount": "1"
+				},
+				"3": {
+					"name": "Archer",
+					"amount": "7"
+				},
+				"4": {
+					"name": "",
+					"amount": ""
+				},
+				"5": {
+					"name": "",
+					"amount": ""
+				}
+			},
+			"st": "2x Poison Towers",
+			"xb": "4x Ground Bows"
+		},
+		"3": {
+			"cc": {
+				"1": {
+					"name": "Ice Golem",
+					"amount": "2"
+				},
+				"2": {
+					"name": "Rocket Balloon",
+					"amount": "2"
+				},
+				"3": {
+					"name": "Archer",
+					"amount": "9"
+				},
+				"4": {
+					"name": "",
+					"amount": ""
+				},
+				"5": {
+					"name": "",
+					"amount": ""
+				}
+			},
+			"st": "2x Poison Towers",
+			"xb": "4x Ground Bows"
+		},
+		"4": {
+			"cc": {
+				"1": {
+					"name": "Ice Golem",
+					"amount": "2"
+				},
+				"2": {
+					"name": "Furnace",
+					"amount": "1"
+				},
+				"3": {
+					"name": "Archer",
+					"amount": "7"
+				},
+				"4": {
+					"name": "",
+					"amount": ""
+				},
+				"5": {
+					"name": "",
+					"amount": ""
+				}
+			},
+			"st": "2x Poison Towers",
+			"xb": "4x Ground Bows"
+		},
+		"5": {
+			"cc": {
+				"1": {
+					"name": "Ice Golem",
+					"amount": "2"
+				},
+				"2": {
+					"name": "Headhunter",
+					"amount": "3"
+				},
+				"3": {
+					"name": "Archer",
+					"amount": "7"
+				},
+				"4": {
+					"name": "",
+					"amount": ""
+				},
+				"5": {
+					"name": "",
+					"amount": ""
+				}
+			},
+			"st": "2x Poison Towers",
+			"xb": "2x Ground Bows & 2x Multi Bows"
+		},
+		"6": {
+			"cc": {
+				"1": {
+					"name": "Ice Golem",
+					"amount": "2"
+				},
+				"2": {
+					"name": "Rocket Balloon",
+					"amount": "2"
+				},
+				"3": {
+					"name": "Archer",
+					"amount": "9"
+				},
+				"4": {
+					"name": "",
+					"amount": ""
+				},
+				"5": {
+					"name": "",
+					"amount": ""
+				}
+			},
+			"st": "2x Poison Towers",
+			"xb": "4x Ground Bows"
+		},
+		"7": {
+			"cc": {
+				"1": {
+					"name": "Ice Golem",
+					"amount": "2"
+				},
+				"2": {
+					"name": "Rocket Balloon",
+					"amount": "3"
+				},
+				"3": {
+					"name": "Archer",
+					"amount": "1"
+				},
+				"4": {
+					"name": "",
+					"amount": ""
+				},
+				"5": {
+					"name": "",
+					"amount": ""
+				}
+			},
+			"st": "2x Rage Towers",
+			"xb": "4x Ground Bows"
+		},
+		"8": {
+			"cc": {
+				"1": {
+					"name": "Ice Golem",
+					"amount": "2"
+				},
+				"2": {
+					"name": "Witch",
+					"amount": "1"
+				},
+				"3": {
+					"name": "Headhunter",
+					"amount": "1"
+				},
+				"4": {
+					"name": "Archer",
+					"amount": "7"
+				},
+				"5": {
+					"name": "",
+					"amount": ""
+				}
+			},
+			"st": "1x Rage Tower & 1x Poison Tower",
+			"xb": "4x Ground Bows"
+		},
+		"9": {
+			"cc": {
+				"1": {
+					"name": "Ice Golem",
+					"amount": "2"
+				},
+				"2": {
+					"name": "Furnace",
+					"amount": "1"
+				},
+				"3": {
+					"name": "Archer",
+					"amount": "7"
+				},
+				"4": {
+					"name": "",
+					"amount": ""
+				},
+				"5": {
+					"name": "",
+					"amount": ""
+				}
+			},
+			"st": "2x Poison Towers",
+			"xb": "4x Ground Bows"
+		},
+		"10": {
+			"cc": {
+				"1": {
+					"name": "Ice Golem",
+					"amount": "2"
+				},
+				"2": {
+					"name": "Furnace",
+					"amount": "1"
+				},
+				"3": {
+					"name": "Headhunter",
+					"amount": "1"
+				},
+				"4": {
+					"name": "Archer",
+					"amount": "1"
+				},
+				"5": {
+					"name": "",
+					"amount": ""
+				}
+			},
+			"st": "2x Rage Towers",
+			"xb": "3x Ground Bows & 1x Multi Bow"
+		},
+		"11": {
+			"cc": {
+				"1": {
+					"name": "Ice Golem",
+					"amount": "2"
+				},
+				"2": {
+					"name": "Furnace",
+					"amount": "1"
+				},
+				"3": {
+					"name": "Archer",
+					"amount": "7"
+				},
+				"4": {
+					"name": "",
+					"amount": ""
+				},
+				"5": {
+					"name": "",
+					"amount": ""
+				}
+			},
+			"st": "2x Rage Towers",
+			"xb": "2x Ground Bows & 2x Multi Bows"
+		},
+		"12": {
+			"cc": {
+				"1": {
+					"name": "Ice Golem",
+					"amount": "2"
+				},
+				"2": {
+					"name": "Furnace",
+					"amount": "1"
+				},
+				"3": {
+					"name": "Archer",
+					"amount": "7"
+				},
+				"4": {
+					"name": "",
+					"amount": ""
+				},
+				"5": {
+					"name": "",
+					"amount": ""
+				}
+			},
+			"st": "2x Poison Towers",
+			"xb": "4x Ground Bows"
+		},
+		"13": {
+			"cc": {
+				"1": {
+					"name": "Ice Golem",
+					"amount": "2"
+				},
+				"2": {
+					"name": "Furnace",
+					"amount": "1"
+				},
+				"3": {
+					"name": "Archer",
+					"amount": "7"
+				},
+				"4": {
+					"name": "",
+					"amount": ""
+				},
+				"5": {
+					"name": "",
+					"amount": ""
+				}
+			},
+			"st": "2x Poison Towers",
+			"xb": "4x Ground Bows"
+		},
+		"14": {
+			"cc": {
+				"1": {
+					"name": "Ice Golem",
+					"amount": "2"
+				},
+				"2": {
+					"name": "Headhunter",
+					"amount": "3"
+				},
+				"3": {
+					"name": "Archer",
+					"amount": "7"
+				},
+				"4": {
+					"name": "",
+					"amount": ""
+				},
+				"5": {
+					"name": "",
+					"amount": ""
+				}
+			},
+			"st": "2x Poison Towers",
+			"xb": "4x Ground Bows"
+		},
+		"15": {
+			"cc": {
+				"1": {
+					"name": "Ice Golem",
+					"amount": "2"
+				},
+				"2": {
+					"name": "Furnace",
+					"amount": "1"
+				},
+				"3": {
+					"name": "Archer",
+					"amount": "7"
+				},
+				"4": {
+					"name": "",
+					"amount": ""
+				},
+				"5": {
+					"name": "",
+					"amount": ""
+				}
+			},
+			"st": "2x Poison Towers",
+			"xb": "4x Ground Bows"
+		}
+	}
+}
