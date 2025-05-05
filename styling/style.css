@@ -7,7 +7,7 @@ body {
 	font-family: "Rockwell", -apple-system, Arial, sans-serif;
 }
 
-#nav{
+#nav *{
     text-align: center;
 	padding-top: 2vh;
     color: white;
