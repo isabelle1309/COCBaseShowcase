@@ -30,7 +30,8 @@ docReady(() => {
 	const ccTextEl = document.getElementById("ccText");
 	const stTextEl = document.getElementById("stText");
 	const xbTextEl = document.getElementById("xbText");
-  const baseLink = document.getElementById("baseLink");
+	const baseLink = document.getElementById("baseLink");
+	const spellTower = document.getElementById("spelltower");
 
 	// Load months json
 	fetch(`${BASE_URL}/months.json`)
@@ -132,6 +133,24 @@ docReady(() => {
 		const month = months[monthIndex];
 		const entry = bases[baseIndex];
 
+		console.log(entry.st);
+    console.log(spellTower);
+    
+
+		if (entry.st.includes("Rage") && entry.st.includes("Poison")) {
+			spellTower.src = `STRP.png`;
+		} else if (entry.st.includes("Rage") && entry.st.includes("Invis")) {
+			spellTower.src = `STRI.png`;
+		} else if (entry.st.includes("Poison") && entry.st.includes("Invis")) {
+			spellTower.src = `STPI.png`;
+		} else if (entry.st.includes("Rage")) {
+			spellTower.src = `STR.png`;
+		} else if (entry.st.includes("Poison")) {
+			spellTower.src = `STP.png`;
+		} else if (entry.st.includes("Invis")) {
+			spellTower.src = `STI.png`;
+		}
+
 		currentBaseLabel.textContent = `Base ${baseIndex + 1}`;
 		updateBaseNav();
 
@@ -145,7 +164,7 @@ docReady(() => {
 				.join(", ") || "N/A";
 		stTextEl.textContent = entry.st || "N/A";
 		xbTextEl.textContent = entry.xb || "N/A";
-    baseLink.href = entry.url;
+		baseLink.href = entry.url;
 	}
 
 	// Helpers to toggle buttons
