@@ -419,6 +419,34 @@
 			"xb": "4x Ground Bows",
 			"url": "https://link.clashofclans.com/fi?action=OpenLayout&id=TH17%3AWB%3AAAAAHAAAAAKGhFZVf8p_L6fgB4S2_IKJ",
 			"it": "3x Multi Inferno"
+		},
+		"16": {
+			"cc": {
+				"1": {
+					"name": "Ice Golem",
+					"amount": "2"
+				},
+				"2": {
+					"name": "Furnace",
+					"amount": "1"
+				},
+				"3": {
+					"name": "Archer",
+					"amount": "7"
+				},
+				"4": {
+					"name": "",
+					"amount": ""
+				},
+				"5": {
+					"name": "",
+					"amount": ""
+				}
+			},
+			"st": "2x Rage Towers",
+			"xb": "2x Ground Bows & 2x Multi Bows",
+			"url": "https://link.clashofclans.com/en?action=OpenLayout&id=TH17%3AWB%3AAAAALAAAAAJnxJPJwOi5LmKlBJ_rcgB5",
+			"it": "2x Multi Inferno & 1x Single Inferno"
 		}
 	}
 }
