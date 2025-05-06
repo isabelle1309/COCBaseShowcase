@@ -135,28 +135,37 @@ docReady(() => {
 		const month = months[monthIndex];
 		const entry = bases[baseIndex];
 
-		console.log(entry.it);
-
-		if (entry.st.includes("Rage") && entry.st.includes("Poison")) {
-			spellTower.src = `images/STRP.png`;
-		} else if (entry.st.includes("Rage") && entry.st.includes("Invis")) {
-			spellTower.src = `images/STRI.png`;
-		} else if (entry.st.includes("Poison") && entry.st.includes("Invis")) {
-			spellTower.src = `images/STPI.png`;
-		} else if (entry.st.includes("Rage")) {
-			spellTower.src = `images/STR.png`;
-		} else if (entry.st.includes("Poison")) {
-			spellTower.src = `images/STP.png`;
-		} else if (entry.st.includes("Invis")) {
-			spellTower.src = `images/STI.png`;
+		if (entry.it) {
+			console.log(entry.it);
+			if (entry.it.includes("Multi") && entry.it.includes("Single")) {
+				infernoTower.src = `images/ITSM.png`;
+			} else if (entry.it.includes("Multi")) {
+				infernoTower.src = `images/ITM.png`;
+			} else if (entry.it.includes("Single")) {
+				infernoTower.src = `images/ITS.png`;
+			}
 		}
 
-		if (entry.it.includes("Multi") && entry.it.includes("Single")) {
-			infernoTower.src = `images/ITSM.png`;
-		} else if (entry.it.includes("Multi")) {
-			infernoTower.src = `images/ITM.png`;
-		} else if (entry.it.includes("Single")) {
-			infernoTower.src = `images/ITS.png`;
+		if (entry.st) {
+			if (entry.st.includes("Rage") && entry.st.includes("Poison")) {
+				spellTower.src = `images/STRP.png`;
+			} else if (
+				entry.st.includes("Rage") &&
+				entry.st.includes("Invis")
+			) {
+				spellTower.src = `images/STRI.png`;
+			} else if (
+				entry.st.includes("Poison") &&
+				entry.st.includes("Invis")
+			) {
+				spellTower.src = `images/STPI.png`;
+			} else if (entry.st.includes("Rage")) {
+				spellTower.src = `images/STR.png`;
+			} else if (entry.st.includes("Poison")) {
+				spellTower.src = `images/STP.png`;
+			} else if (entry.st.includes("Invis")) {
+				spellTower.src = `images/STI.png`;
+			}
 		}
 
 		currentBaseLabel.textContent = `Base ${baseIndex + 1}`;
