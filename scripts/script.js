@@ -169,7 +169,7 @@ docReady(() => {
 		}
 
 		if (entry.xb) {
-			if (entry.it.includes("Ground") && entry.it.includes("Multi")) {
+			if (entry.xb.includes("Ground") && entry.xb.includes("Multi")) {
 				xbow.src = `images/XBGA.png`;
 			} else if (entry.xb.includes("Ground")) {
 				xbow.src = `images/XBG.png`;
