@@ -180,6 +180,7 @@ docReady(() => {
 				.map((t) => `${t.amount}× ${t.name}`)
 				.join(", ") || "N/A";
 		stTextEl.textContent = entry.st || "N/A";
+    itTextEl.textContent = entry.it || "N/A";
 		xbTextEl.textContent = entry.xb || "N/A";
 		baseLink.href = entry.url;
 	}
