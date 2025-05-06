@@ -34,6 +34,7 @@ docReady(() => {
 	const spellTower = document.getElementById("spelltower");
 	const itTextEl = document.getElementById("itText");
 	const infernoTower = document.getElementById("infernotower");
+	const xbow = document.getElementById("xbow");
 
 	// Load months json
 	fetch(`${BASE_URL}/months.json`)
@@ -135,17 +136,6 @@ docReady(() => {
 		const month = months[monthIndex];
 		const entry = bases[baseIndex];
 
-		if (entry.it) {
-			console.log(entry.it);
-			if (entry.it.includes("Multi") && entry.it.includes("Single")) {
-				infernoTower.src = `images/ITSM.png`;
-			} else if (entry.it.includes("Multi")) {
-				infernoTower.src = `images/ITM.png`;
-			} else if (entry.it.includes("Single")) {
-				infernoTower.src = `images/ITS.png`;
-			}
-		}
-
 		if (entry.st) {
 			if (entry.st.includes("Rage") && entry.st.includes("Poison")) {
 				spellTower.src = `images/STRP.png`;
@@ -168,6 +158,26 @@ docReady(() => {
 			}
 		}
 
+		if (entry.it) {
+			if (entry.it.includes("Multi") && entry.it.includes("Single")) {
+				infernoTower.src = `images/ITSM.png`;
+			} else if (entry.it.includes("Multi")) {
+				infernoTower.src = `images/ITM.png`;
+			} else if (entry.it.includes("Single")) {
+				infernoTower.src = `images/ITS.png`;
+			}
+		}
+
+		if (entry.xb) {
+			if (entry.it.includes("Ground") && entry.it.includes("Multi")) {
+				xbow.src = `images/XBGA.png`;
+			} else if (entry.xb.includes("Ground")) {
+				xbow.src = `images/XBG.png`;
+			} else if (entry.xb.includes("Multi")) {
+				xbow.src = `images/XBA.png`;
+			}
+		}
+
 		currentBaseLabel.textContent = `Base ${baseIndex + 1}`;
 		updateBaseNav();
 
@@ -180,7 +190,7 @@ docReady(() => {
 				.map((t) => `${t.amount}× ${t.name}`)
 				.join(", ") || "N/A";
 		stTextEl.textContent = entry.st || "N/A";
-    itTextEl.textContent = entry.it || "N/A";
+		itTextEl.textContent = entry.it || "N/A";
 		xbTextEl.textContent = entry.xb || "N/A";
 		baseLink.href = entry.url;
 	}
