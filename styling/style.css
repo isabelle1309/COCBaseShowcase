@@ -21,7 +21,7 @@ body {
 }
 
 #showcase img {
-	width: 60vw;
+	width: 50vw;
 	padding-bottom: 1vh;
 }
 
@@ -89,6 +89,10 @@ body {
 	text-decoration: none;
 }
 
+#baseLinkHeader{
+	margin: 1vh 0;
+}
+
 #ratioWarning {
 	display: none;
 	position: fixed;
@@ -106,12 +110,20 @@ body {
 	#ratioWarning {
 		display: block;
 	}
+	#showcase img {
+		width: 55vh;
+		padding-bottom: 1vh;
+	}
 }
 
 /* Hide when height is 601px or more */
 @media screen and (min-height: 631px) {
 	#ratioWarning {
 		display: none;
+	}
+	#showcase img {
+		width: 50vw;
+		padding-bottom: 1vh;
 	}
 }
 
