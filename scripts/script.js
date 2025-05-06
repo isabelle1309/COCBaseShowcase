@@ -138,17 +138,17 @@ docReady(() => {
     
 
 		if (entry.st.includes("Rage") && entry.st.includes("Poison")) {
-			spellTower.src = `STRP.png`;
+			spellTower.src = `images/STRP.png`;
 		} else if (entry.st.includes("Rage") && entry.st.includes("Invis")) {
-			spellTower.src = `STRI.png`;
+			spellTower.src = `images/STRI.png`;
 		} else if (entry.st.includes("Poison") && entry.st.includes("Invis")) {
-			spellTower.src = `STPI.png`;
+			spellTower.src = `images/STPI.png`;
 		} else if (entry.st.includes("Rage")) {
-			spellTower.src = `STR.png`;
+			spellTower.src = `images/STR.png`;
 		} else if (entry.st.includes("Poison")) {
-			spellTower.src = `STP.png`;
+			spellTower.src = `images/STP.png`;
 		} else if (entry.st.includes("Invis")) {
-			spellTower.src = `STI.png`;
+			spellTower.src = `images/STI.png`;
 		}
 
 		currentBaseLabel.textContent = `Base ${baseIndex + 1}`;
