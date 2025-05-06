@@ -1,228 +1,210 @@
-const BASE_URL =
-	"https://raw.githubusercontent.com/isabelle1309/COCBaseShowcase/main/images";
+const BASE_URL = 'https://raw.githubusercontent.com/isabelle1309/COCBaseShowcase/main/images';
 
 let months = [];
 let monthIndex = 0;
 let bases = [];
 let baseIndex = 0;
+const MAX_BUTTONS = 10;
 
-// Preload helper
 function preloadImages(urls) {
-	urls.forEach((url) => {
-		new Image().src = url;
-	});
+  urls.forEach(url => { new Image().src = url; });
 }
 
-// DOM‑ready helper
 function docReady(fn) {
-	if (document.readyState !== "loading") fn();
-	else document.addEventListener("DOMContentLoaded", fn);
+  if (document.readyState !== 'loading') fn();
+  else document.addEventListener('DOMContentLoaded', fn);
 }
 
 docReady(() => {
-	const prevMonthBtn = document.getElementById("prev-month");
-	const nextMonthBtn = document.getElementById("next-month");
-	const currentMonthLabel = document.getElementById("current-month");
-	const prevBaseBtn = document.getElementById("prev-base");
-	const nextBaseBtn = document.getElementById("next-base");
-	const currentBaseLabel = document.getElementById("current-base");
-	const imgEl = document.getElementById("baseImg");
-	const ccTextEl = document.getElementById("ccText");
-	const stTextEl = document.getElementById("stText");
-	const xbTextEl = document.getElementById("xbText");
-	const baseLink = document.getElementById("baseLink");
-	const spellTower = document.getElementById("spelltower");
-	const itTextEl = document.getElementById("itText");
-	const infernoTower = document.getElementById("infernotower");
-	const xbow = document.getElementById("xbow");
+  const prevMonthBtn      = document.getElementById('prev-month');
+  const nextMonthBtn      = document.getElementById('next-month');
+  const currentMonthLabel = document.getElementById('current-month');
 
-	// Load months json
-	fetch(`${BASE_URL}/months.json`)
-		.then((r) => r.text())
-		.then((text) => {
-			const cleaned = text.trim().replace(/^\uFEFF/, "");
-			months = JSON.parse(cleaned).months || [];
-			// Start on the latest month
-			monthIndex = months.length - 1;
-			updateMonthNav();
-			loadMonth();
-		})
-		.catch((err) => console.error("Failed to load months.json", err));
+  const navBase           = document.getElementById('nav-base');
+  const prevBaseBtn       = document.getElementById('prev-base');
+  const nextBaseBtn       = document.getElementById('next-base');
+  const currentBaseLabel  = document.getElementById('current-base');
+  const baseControls      = document.createElement('div');
+  baseControls.id         = 'base-controls';
+  navBase.appendChild(baseControls);
 
-	// Month buttons
-	prevMonthBtn.onclick = () => {
-		if (monthIndex > 0) {
-			monthIndex--;
-			loadMonth();
-		}
-	};
-	nextMonthBtn.onclick = () => {
-		if (monthIndex < months.length - 1) {
-			monthIndex++;
-			loadMonth();
-		}
-	};
+  const imgEl             = document.getElementById('baseImg');
+  const ccText            = document.getElementById('ccText');
+  const stText            = document.getElementById('stText');
+  const itText            = document.getElementById('itText');
+  const xbText            = document.getElementById('xbText');
+  const baseLink          = document.getElementById('baseLink');
 
-	// Base buttons
-	prevBaseBtn.onclick = () => {
-		if (baseIndex > 0) {
-			baseIndex--;
-			renderBase();
-		}
-	};
-	nextBaseBtn.onclick = () => {
-		if (baseIndex < bases.length - 1) {
-			baseIndex++;
-			renderBase();
-		}
-	};
+  const firstBaseBtn      = document.createElement('button');
+  firstBaseBtn.id         = 'first-base';
+  firstBaseBtn.textContent= '«';
+  const lastBaseBtn       = document.createElement('button');
+  lastBaseBtn.id          = 'last-base';
+  lastBaseBtn.textContent = '»';
 
-	// Arrow‑key support
-	document.addEventListener("keydown", (e) => {
-		if (!bases.length) return;
-		if (e.key === "ArrowLeft" && baseIndex > 0) prevBaseBtn.click();
-		if (e.key === "ArrowRight" && baseIndex < bases.length - 1)
-			nextBaseBtn.click();
-	});
+  const gotoInput         = document.createElement('input');
+  gotoInput.id            = 'goto-base-input';
+  gotoInput.type          = 'number';
+  gotoInput.min           = '1';
+  gotoInput.placeholder   = 'Base #';
+  const gotoBtn           = document.createElement('button');
+  gotoBtn.id              = 'goto-base-btn';
+  gotoBtn.textContent     = 'Go';
 
-	// Load month JSON, build base arr and preload images
-	function loadMonth() {
-		const month = months[monthIndex] || "";
-		currentMonthLabel.textContent = formatMonthLabel(month);
-		updateMonthNav();
+  const baseButtonsContainer = document.createElement('div');
+  baseButtonsContainer.id    = 'base-buttons';
 
-		fetch(`${BASE_URL}/${month}/${month}.json`)
-			.then((r) => r.text())
-			.then((text) => {
-				const data = JSON.parse(text.trim().replace(/^\uFEFF/, ""));
-				const baseObj = data[month] || {};
+  baseControls.append(
+    firstBaseBtn,
+    prevBaseBtn,
+    baseButtonsContainer,
+    nextBaseBtn,
+    lastBaseBtn,
+    gotoInput,
+    gotoBtn
+  );
 
-				// object → sorted array
-				bases = Object.keys(baseObj)
-					.sort((a, b) => +a - +b)
-					.map((k) => baseObj[k]);
+  prevMonthBtn.addEventListener('click', () => {
+    if (monthIndex > 0) { monthIndex--; loadMonth(); }
+  });
+  nextMonthBtn.addEventListener('click', () => {
+    if (monthIndex < months.length - 1) { monthIndex++; loadMonth(); }
+  });
 
-				// preload
-				const urls = Object.keys(baseObj)
-					.sort((a, b) => +a - +b)
-					.map((k) => `${BASE_URL}/${month}/${k}.png`);
-				preloadImages(urls);
+  firstBaseBtn.addEventListener('click', () => { baseIndex = 0; renderBase(); });
+  prevBaseBtn.addEventListener('click', () => { if (baseIndex > 0) baseIndex--; renderBase(); });
+  nextBaseBtn.addEventListener('click', () => { if (baseIndex < bases.length - 1) baseIndex++; renderBase(); });
+  lastBaseBtn.addEventListener('click', () => { baseIndex = bases.length - 1; renderBase(); });
 
-				baseIndex = 0;
-				updateBaseNav();
-				renderBase();
-			})
-			.catch((err) => {
-				console.error(`Failed to load ${month}.json`, err);
-				bases = [];
-				baseIndex = 0;
-				renderBase();
-			});
-	}
+  gotoBtn.addEventListener('click', () => {
+    const n = parseInt(gotoInput.value, 10);
+    if (n >= 1 && n <= bases.length) {
+      baseIndex = n - 1;
+      renderBase();
+    }
+  });
+  gotoInput.addEventListener('keypress', e => {
+    if (e.key === 'Enter') gotoBtn.click();
+  });
 
-	// Render CC / ST / XB and image
-	function renderBase() {
-		if (!bases.length) {
-			imgEl.src = "";
-			imgEl.alt = "";
-			ccTextEl.textContent = "";
-			stTextEl.textContent = "";
-			xbTextEl.textContent = "";
-			currentBaseLabel.textContent = "Base -";
-			updateBaseNav();
-			return;
-		}
+  document.addEventListener('keydown', e => {
+    if (!bases.length) return;
+    if (e.key === 'ArrowLeft' && baseIndex > 0) prevBaseBtn.click();
+    if (e.key === 'ArrowRight' && baseIndex < bases.length - 1) nextBaseBtn.click();
+  });
 
-		const month = months[monthIndex];
-		const entry = bases[baseIndex];
+  fetch(`${BASE_URL}/months.json`)
+    .then(r => r.json())
+    .then(data => {
+      months     = data.months || [];
+      monthIndex = months.length - 1;
+      updateMonthNav();
+      loadMonth();
+    })
+    .catch(err => console.error('Failed to load months.json', err));
 
-		if (entry.st) {
-			if (entry.st.includes("Rage") && entry.st.includes("Poison")) {
-				spellTower.src = `images/STRP.png`;
-			} else if (
-				entry.st.includes("Rage") &&
-				entry.st.includes("Invis")
-			) {
-				spellTower.src = `images/STRI.png`;
-			} else if (
-				entry.st.includes("Poison") &&
-				entry.st.includes("Invis")
-			) {
-				spellTower.src = `images/STPI.png`;
-			} else if (entry.st.includes("Rage")) {
-				spellTower.src = `images/STR.png`;
-			} else if (entry.st.includes("Poison")) {
-				spellTower.src = `images/STP.png`;
-			} else if (entry.st.includes("Invis")) {
-				spellTower.src = `images/STI.png`;
-			}
-		}
+  function loadMonth() {
+    const month = months[monthIndex] || '';
+    currentMonthLabel.textContent = formatMonthLabel(month);
+    updateMonthNav();
 
-		if (entry.it) {
-			if (entry.it.includes("Multi") && entry.it.includes("Single")) {
-				infernoTower.src = `images/ITSM.png`;
-			} else if (entry.it.includes("Multi")) {
-				infernoTower.src = `images/ITM.png`;
-			} else if (entry.it.includes("Single")) {
-				infernoTower.src = `images/ITS.png`;
-			}
-		}
+    fetch(`${BASE_URL}/${month}/${month}.json`)
+      .then(r => r.json())
+      .then(data => {
+        const baseObj = data[month] || {};
+        bases = Object.keys(baseObj)
+          .sort((a, b) => +a - +b)
+          .map(k => baseObj[k]);
 
-		if (entry.xb) {
-			if (entry.xb.includes("Ground") && entry.xb.includes("Multi")) {
-				xbow.src = `images/XBGA.png`;
-			} else if (entry.xb.includes("Ground")) {
-				xbow.src = `images/XBG.png`;
-			} else if (entry.xb.includes("Multi")) {
-				xbow.src = `images/XBA.png`;
-			}
-		}
+        const urls = Object.keys(baseObj)
+          .sort((a, b) => +a - +b)
+          .map(k => `${BASE_URL}/${month}/${k}.png`);
+        preloadImages(urls);
 
-		currentBaseLabel.textContent = `Base ${baseIndex + 1}`;
-		updateBaseNav();
+        baseIndex = 0;
+        updateBaseNav();
+        renderBase();
+      })
+      .catch(err => {
+        console.error(`Failed to load ${month}.json`, err);
+        bases = [];
+        baseIndex = 0;
+        renderBase();
+      });
+  }
 
-		imgEl.src = `${BASE_URL}/${month}/${baseIndex + 1}.png`;
-		imgEl.alt = `Base ${baseIndex + 1}`;
+  function renderBase() {
+    if (!bases.length) {
+      imgEl.src = '';
+      [ccText, stText, itText, xbText].forEach(el => el.textContent = '');
+      baseButtonsContainer.innerHTML = '';
+      currentBaseLabel.textContent = 'Base –';
+      updateBaseNav();
+      return;
+    }
 
-		ccTextEl.textContent =
-			Object.values(entry.cc || {})
-				.filter((t) => t.name)
-				.map((t) => `${t.amount}× ${t.name}`)
-				.join(", ") || "N/A";
-		stTextEl.textContent = entry.st || "N/A";
-		itTextEl.textContent = entry.it || "N/A";
-		xbTextEl.textContent = entry.xb || "N/A";
-		baseLink.href = entry.url;
-	}
+    const month = months[monthIndex];
+    const entry = bases[baseIndex];
 
-	// Helpers to toggle buttons
-	function updateMonthNav() {
-		prevMonthBtn.disabled = monthIndex === 0;
-		nextMonthBtn.disabled = monthIndex >= months.length - 1;
-	}
-	function updateBaseNav() {
-		prevBaseBtn.disabled = baseIndex === 0;
-		nextBaseBtn.disabled = baseIndex >= bases.length - 1;
-	}
+    imgEl.src = `${BASE_URL}/${month}/${baseIndex + 1}.png`;
+    imgEl.alt = `Base ${baseIndex + 1}`;
+    baseLink.href = entry.url || '#';
 
-	// Month formatting
-	const monthNames = {
-		jan: "January",
-		feb: "February",
-		mar: "March",
-		apr: "April",
-		may: "May",
-		jun: "June",
-		jul: "July",
-		aug: "August",
-		sep: "September",
-		oct: "October",
-		nov: "November",
-		dec: "December",
-	};
-	function formatMonthLabel(abbr) {
-		const m = abbr.slice(0, 3).toLowerCase();
-		const y = abbr.slice(3);
-		return monthNames[m] && y ? `${monthNames[m]} 20${y}` : abbr;
-	}
+    ccText.textContent = Object.values(entry.cc || {})
+      .filter(t => t.name)
+      .map(t => `${t.amount}× ${t.name}`)
+      .join(', ') || 'N/A';
+    stText.textContent = entry.st || 'N/A';
+    itText.textContent = entry.it || 'N/A';
+    xbText.textContent = entry.xb || 'N/A';
+
+    currentBaseLabel.textContent = `Base ${baseIndex + 1}`;
+    updateBaseNav();
+
+    baseButtonsContainer.innerHTML = '';
+    // determine window of buttons
+    const total = bases.length;
+    const half = Math.floor(MAX_BUTTONS / 2);
+    let start = Math.max(0, baseIndex - half);
+    let end = start + MAX_BUTTONS;
+    if (end > total) {
+      end = total;
+      start = Math.max(0, end - MAX_BUTTONS);
+    }
+    for (let idx = start; idx < end; idx++) {
+      const btn = document.createElement('button');
+      btn.className = 'base-num-btn';
+      btn.textContent = idx + 1;
+      if (idx === baseIndex) btn.classList.add('active');
+      btn.addEventListener('click', () => {
+        baseIndex = idx;
+        renderBase();
+      });
+      baseButtonsContainer.appendChild(btn);
+    }
+  }
+
+  function updateMonthNav() {
+    prevMonthBtn.disabled = monthIndex === 0;
+    nextMonthBtn.disabled = monthIndex >= months.length - 1;
+  }
+  function updateBaseNav() {
+    firstBaseBtn.disabled = baseIndex === 0;
+    prevBaseBtn.disabled  = baseIndex === 0;
+    nextBaseBtn.disabled  = baseIndex >= bases.length - 1;
+    lastBaseBtn.disabled  = baseIndex >= bases.length - 1;
+    gotoInput.max         = bases.length;
+  }
+
+  const monthNames = {
+    jan: 'January', feb: 'February', mar: 'March',
+    apr: 'April',   may: 'May',      jun: 'June',
+    jul: 'July',    aug: 'August',   sep: 'September',
+    oct: 'October', nov: 'November', dec: 'December'
+  };
+  function formatMonthLabel(abbr) {
+    const m = abbr.slice(0, 3).toLowerCase();
+    const y = abbr.slice(3);
+    return monthNames[m] && y ? `${monthNames[m]} 20${y}` : abbr;
+  }
 });
