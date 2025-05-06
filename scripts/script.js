@@ -32,7 +32,8 @@ docReady(() => {
 	const xbTextEl = document.getElementById("xbText");
 	const baseLink = document.getElementById("baseLink");
 	const spellTower = document.getElementById("spelltower");
-  const itTextEl = document.getElementById("itText");
+	const itTextEl = document.getElementById("itText");
+	const infernoTower = document.getElementById("infernotower");
 
 	// Load months json
 	fetch(`${BASE_URL}/months.json`)
@@ -134,6 +135,8 @@ docReady(() => {
 		const month = months[monthIndex];
 		const entry = bases[baseIndex];
 
+		console.log(entry.it);
+
 		if (entry.st.includes("Rage") && entry.st.includes("Poison")) {
 			spellTower.src = `images/STRP.png`;
 		} else if (entry.st.includes("Rage") && entry.st.includes("Invis")) {
@@ -146,6 +149,14 @@ docReady(() => {
 			spellTower.src = `images/STP.png`;
 		} else if (entry.st.includes("Invis")) {
 			spellTower.src = `images/STI.png`;
+		}
+
+		if (entry.it.includes("Multi") && entry.it.includes("Single")) {
+			infernoTower.src = `images/ITSM.png`;
+		} else if (entry.it.includes("Multi")) {
+			infernoTower.src = `images/ITM.png`;
+		} else if (entry.it.includes("Single")) {
+			infernoTower.src = `images/ITS.png`;
 		}
 
 		currentBaseLabel.textContent = `Base ${baseIndex + 1}`;
