@@ -32,6 +32,7 @@ docReady(() => {
 	const xbTextEl = document.getElementById("xbText");
 	const baseLink = document.getElementById("baseLink");
 	const spellTower = document.getElementById("spelltower");
+  const itTextEl = document.getElementById("itText");
 
 	// Load months json
 	fetch(`${BASE_URL}/months.json`)
@@ -132,10 +133,6 @@ docReady(() => {
 
 		const month = months[monthIndex];
 		const entry = bases[baseIndex];
-
-		console.log(entry.st);
-    console.log(spellTower);
-    
 
 		if (entry.st.includes("Rage") && entry.st.includes("Poison")) {
 			spellTower.src = `images/STRP.png`;
