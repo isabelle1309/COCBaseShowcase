@@ -207,13 +207,11 @@ docReady(() => {
 
 		if (entry.xb) {
 			if (entry.xb.includes("Ground") && entry.xb.includes("Multi")) {
-				if (entry.xb.includes("Ground") && entry.xb.includes("Multi")) {
-					xbow.src = `images/XBGA.png`;
-				} else if (entry.xb.includes("Ground")) {
-					xbow.src = `images/XBG.png`;
-				} else if (entry.xb.includes("Multi")) {
-					xbow.src = `images/XBA.png`;
-				}
+				xbow.src = `images/XBGA.png`;
+			} else if (entry.xb.includes("Ground")) {
+				xbow.src = `images/XBG.png`;
+			} else if (entry.xb.includes("Multi")) {
+				xbow.src = `images/XBA.png`;
 			}
 		}
 
