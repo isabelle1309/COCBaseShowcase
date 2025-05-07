@@ -117,22 +117,25 @@ body * {
 	z-index: 1;
 }
 
-/* Grid layout for clan castle troops */
+/* Horizontal flex layout for clan castle troops */
 .cc-grid {
-	display: grid;
-	grid-template-columns: repeat(auto-fit, minmax(60px, 1fr));
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
 	gap: 8px;
 	padding: 8px;
+	overflow-x: auto; /* allows scrolling if too many items */
   }
   
   .cc-item {
 	position: relative;
 	text-align: center;
+	flex: 0 0 auto; /* prevents shrinking */
   }
   
   .cc-item img {
-	width: 48px;
-	height: 48px;
+	width: 7.7vw;
+	height: auto;
   }
   
   .cc-count {
@@ -141,7 +144,7 @@ body * {
 	right: 0;
 	background: rgba(0, 0, 0, 0.6);
 	color: #fff;
-	font-size: 0.8rem;
+	font-size: 200%;
 	padding: 2px 4px;
 	border-radius: 4px;
   }
@@ -218,10 +221,12 @@ body * {
 }
 
 #cc-section {
-	top: 778px;
-	left: 821px;
-	width: 1070px;
-	height: 162px;
+	top: 80vh;
+	left: 42.6vw;
+	width: 55.7vw;
+	height: 17vh;
+	justify-content: left;
+	flex-direction: row;
 }
 
 #it-section {

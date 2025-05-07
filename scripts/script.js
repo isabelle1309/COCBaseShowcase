@@ -241,6 +241,7 @@ docReady(() => {
 		if (!troops.length) {
 			ccGrid.textContent = "N/A";
 		}
+
 		stText.textContent = entry.st || "N/A";
 		itText.textContent = entry.it || "N/A";
 		xbText.textContent = entry.xb || "N/A";
