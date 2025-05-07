@@ -21,6 +21,7 @@ body {
 body * {
 	font-family: "Clash";
 	text-shadow: black 0px 2px 0px;
+	color: white;
 }
 
 /*──────────────────────────────────*/
