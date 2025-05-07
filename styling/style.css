@@ -117,6 +117,35 @@ body * {
 	z-index: 1;
 }
 
+/* Grid layout for clan castle troops */
+.cc-grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(60px, 1fr));
+	gap: 8px;
+	padding: 8px;
+  }
+  
+  .cc-item {
+	position: relative;
+	text-align: center;
+  }
+  
+  .cc-item img {
+	width: 48px;
+	height: 48px;
+  }
+  
+  .cc-count {
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	background: rgba(0, 0, 0, 0.6);
+	color: #fff;
+	font-size: 0.8rem;
+	padding: 2px 4px;
+	border-radius: 4px;
+  }
+
 /*──────────────────────────────────*/
 /* 4. Base‐controls & buttons       */
 /*──────────────────────────────────*/

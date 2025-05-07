@@ -32,7 +32,7 @@ docReady(() => {
 	navBase.appendChild(baseControls);
 
 	const imgEl = document.getElementById("baseImg");
-	const ccText = document.getElementById("ccText");
+	const ccGrid = document.getElementById("ccGrid");
 	const stText = document.getElementById("stText");
 	const itText = document.getElementById("itText");
 	const xbText = document.getElementById("xbText");
@@ -161,9 +161,7 @@ docReady(() => {
 	function renderBase() {
 		if (!bases.length) {
 			imgEl.src = "";
-			[ccText, stText, itText, xbText].forEach(
-				(el) => (el.textContent = "")
-			);
+			[stText, itText, xbText].forEach((el) => (el.textContent = ""));
 			baseButtonsContainer.innerHTML = "";
 			currentBaseLabel.textContent = "Base –";
 			updateBaseNav();
@@ -219,11 +217,30 @@ docReady(() => {
 		imgEl.alt = `Base ${baseIndex + 1}`;
 		baseLink.href = entry.url || "#";
 
-		ccText.textContent =
-			Object.values(entry.cc || {})
-				.filter((t) => t.name)
-				.map((t) => `${t.amount}× ${t.name}`)
-				.join(", ") || "N/A";
+		// Populate clan castle troops grid
+		ccGrid.innerHTML = "";
+		const troops = Object.values(entry.cc || {}).filter((t) => t.name);
+		troops.forEach((t) => {
+			const wrapper = document.createElement("div");
+			wrapper.className = "cc-item";
+
+			const img = new Image();
+			img.src = `${BASE_URL}/cctroops/${t.name.toLowerCase()}.png`;
+			img.alt = t.name;
+			wrapper.appendChild(img);
+
+			const count = document.createElement("span");
+			count.className = "cc-count";
+			count.textContent = t.amount;
+			wrapper.appendChild(count);
+
+			ccGrid.appendChild(wrapper);
+		});
+
+		// If no troops, show placeholder text
+		if (!troops.length) {
+			ccGrid.textContent = "N/A";
+		}
 		stText.textContent = entry.st || "N/A";
 		itText.textContent = entry.it || "N/A";
 		xbText.textContent = entry.xb || "N/A";
