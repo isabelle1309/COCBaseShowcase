@@ -1,36 +1,46 @@
-.center {
-	text-align: center;
-}
+/*──────────────────────────────────*/
+/* 1. Global resets & fonts         */
+/*──────────────────────────────────*/
 
 html,
 body {
 	margin: 0;
 	padding: 0;
 	border: 0;
-	background-color: #181a1b;
+	height: 100%;
 	font-family: "Rockwell", -apple-system, Arial, sans-serif;
+	background: url("../images/desktopbackground.png") center/cover no-repeat;
+	background-size: 100% 100%;
 }
 
+@font-face {
+	font-family: Clash;
+	src: url(../Clash_Bold.otf);
+}
+
+body * {
+	font-family: "Clash";
+	text-shadow: black 0px 2px 0px;
+}
+
+/*──────────────────────────────────*/
+/* 2. Navigation & headings         */
+/*──────────────────────────────────*/
+
 #nav {
+	position: fixed;
+	z-index: 1;
+	right: 6vw;
+	top: 10vh;
 	padding-top: 1vh;
 }
 
-#nav #current-month,
-#nav #current-base {
-	color: white;
-}
-
-#showcase img {
-	width: 50vw;
-	padding-bottom: 1vh;
-}
-
-#showcase #clancastle,
-#showcase #spelltower,
-#showcase #xbow,
-#showcase #infernotower {
-	height: 7vw;
-	width: auto;
+#nav-month,
+#nav-base {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 0.5rem;
 }
 
 #nav a {
@@ -41,122 +51,82 @@ body {
 #nav #prev {
 	left: 10px;
 }
-
 #nav #next {
 	right: 10px;
 }
 
+#current-month,
+#current-base,
 #title,
-#baseNum,
-#baseLink {
-	color: #ff006e;
-}
-
-#baseInfo {
-	display: flex;
-	flex-direction: row;
-	justify-content: center;
-}
-
-.info-section {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	text-align: center;
-	width: 26vw;
-}
-
-.info-section img {
-	height: 10vw;
-	width: auto;
-}
-
-.info-text {
-	margin-top: 1vh;
-	font-size: 1rem;
+#baseNum {
 	color: white;
 }
 
-#showcase #github {
-	height: 6vh;
-	width: auto;
-	position: fixed;
-	left: 0;
-	top: 0;
-	padding-bottom: 0;
+#current-base{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 0.5rem;
 }
 
-#baseLink {
+#baseNum,
+#title {
+	color: #ff006e;
+}
+
+#baseLink,
+#baseLinkHeader {
+	color: white;
+	font-size: 95%;
 	text-decoration: none;
 }
 
-#baseLinkHeader{
-	margin: 1vh 0;
-}
-
-#ratioWarning {
-	display: none;
+#baseLinkHeader {
 	position: fixed;
-	color: red;
-	font-weight: bold;
-	font-size: 100%;
-	text-shadow: black 2px 2px;
-	top: 0;
-	left: 50%; /* shift left edge to midpoint */
-	transform: translateX(-50%);
+	right: 4vw;
+	top: 74.7vh;
+	font-size: 130%;
 }
 
-/* Show when height is 600px or less */
-@media screen and (max-height: 630px) {
-	#ratioWarning {
-		display: block;
-	}
-	#showcase img {
-		width: 55vh;
-		padding-bottom: 1vh;
-	}
+/*──────────────────────────────────*/
+/* 3. Showcase & images             */
+/*──────────────────────────────────*/
+
+/* #showcase img {
+	width: 50vw;
+	padding-bottom: 1vh;
+  } */
+
+#clancastle,
+#spelltower,
+#xbow {
+	height: 7vw;
+	width: auto;
 }
 
-/* Hide when height is 601px or more */
-@media screen and (min-height: 631px) {
-	#ratioWarning {
-		display: none;
-	}
-	#showcase img {
-		width: 50vw;
-		padding-bottom: 1vh;
-	}
+#infernotower {
+	height: 36vh !important;
 }
 
-@media (max-width: 532px) {
-	#showcase #github {
-		height: 6vh;
-		width: auto;
-		position: fixed;
-		left: 0;
-		top: 6vh;
-		padding-bottom: 0;
-	}
+#github {
+	position: fixed;
+	left: 20px;
+	top: 15px;
+	padding: 30px;
+	z-index: 1;
 }
 
-/* Make both month‑ and base‑nav bars lay out their children inline */
-#nav-month,
-#nav-base {
-  display: flex;
-  justify-content: center;    /* center them horizontally */
-  align-items: center;        /* align buttons/text vertically */
-  gap: 0.5rem;                 /* space between items */
-}
+/*──────────────────────────────────*/
+/* 4. Base‐controls & buttons       */
+/*──────────────────────────────────*/
 
-/* Also ensure the injected base‑controls container is a single row */
 #base-controls {
-  display: flex;
-  flex-wrap: nowrap;
-  align-items: center;
-  gap: 0.5rem;
+	display: flex;
+	flex-wrap: nowrap;
+	align-items: center;
+	gap: 0.5rem;
 }
 
-/* default look for your circular base buttons */
 #base-buttons .base-num-btn {
 	background: transparent;
 	border: 1px solid #ccc;
@@ -169,12 +139,153 @@ body {
 	cursor: pointer;
 	color: #ccc;
 	transition: 0.2s, color 0.2s;
-  }
-  
-  /* highlight the “active” (current) base */
-  #base-buttons .base-num-btn.active {
+}
+
+#base-buttons .base-num-btn.active {
 	background: #ff006e;
 	color: #fff;
 	border-color: #ff006e;
-  }
-  
+}
+
+/*──────────────────────────────────*/
+/* 5. Fixed positioned sections     */
+/*──────────────────────────────────*/
+
+#baseImg {
+	position: fixed;
+	border-radius: 25px;
+	top: 22.6vh;
+	right: 4.1vw;
+	width: 50.5vw;
+	height: 49.8vh;
+}
+
+.baseSection {
+	position: fixed;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+}
+
+#st-section {
+	top: 22vh;
+	left: 1vw;
+	width: 20.3vw;
+	height: 35.8vh;
+}
+
+#spelltower,
+#xbow {
+	height: 22vh;
+}
+
+#xb-section {
+	top: 60vh;
+	left: 1vw;
+	width: 20.3vw;
+	height: 35.8vh;
+}
+
+#cc-section {
+	top: 778px;
+	left: 821px;
+	width: 1070px;
+	height: 162px;
+}
+
+#it-section {
+	top: 22vh;
+	left: 21.6vw;
+	width: 21vw;
+	height: 75vh;
+}
+
+#ratioWarning {
+	display: none;
+}
+
+/*──────────────────────────────────*/
+/* 6. Responsive overrides (mobile) */
+/*    — placed last to win by cascade */
+/*──────────────────────────────────*/
+
+@media screen and (max-width: 810px) {
+	/* show warning at narrow widths */
+	#ratioWarning {
+		display: block;
+		position: fixed;
+		color: red;
+		font-weight: bold;
+		font-size: 120%;
+		text-shadow: black 2px 2px;
+		top: 41%;
+		left: 50%;
+		transform: translateX(-50%);
+	}
+
+	*:not(#ratioWarning, html, head, body) { display: none; }	
+
+	/* neutralize any desktop background */
+	html,
+	body {
+		background: none !important;
+		background-image: none !important;
+	}
+
+	/* reposition & resize base image */
+	#baseImg {
+		top: 17vh;
+		right: 22.1vw;
+		width: 50.5vw;
+		height: 26.8vh;
+	}
+
+	/* adjust navigation for small screens */
+	#nav {
+		top: 4vh;
+		left: 50%;
+		transform: translateX(-50%);
+		width: 100%;
+	}
+
+	/* bump up link header size */
+	#baseLinkHeader {
+		right: 27vw;
+		top: 42.7vh;
+		font-size: 130%;
+	}
+
+	#st-section,
+	#xb-section,
+	#it-section {
+		top: 59vh;
+	}
+
+	#st-section {
+		left: 4vw;
+	}
+
+	#xb-section {
+		left: 39vw;
+	}
+
+	#it-section {
+		left: unset;
+		right: 4vw;
+		top: 32vh;
+	}
+
+	#current-base{
+		top: 9.5vh;
+		left: 100%;
+		transform: translateX(-50%);
+		width: 100%;
+		position: fixed;
+	}
+
+	#nav-month{
+		position: relative;
+		top: -1vh;
+	}
+}
