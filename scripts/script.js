@@ -4,6 +4,7 @@ const BASE_URL =
 let months = [];
 let monthIndex = 0;
 let bases = [];
+let baseKeys = [];
 let baseIndex = 0;
 const MAX_BUTTONS = 10;
 
@@ -137,13 +138,17 @@ docReady(() => {
 			.then((r) => r.json())
 			.then((data) => {
 				const baseObj = data[month] || {};
-				bases = Object.keys(baseObj)
-					.sort((a, b) => +a - +b)
-					.map((k) => baseObj[k]);
 
-				const urls = Object.keys(baseObj)
-					.sort((a, b) => +a - +b)
-					.map((k) => `${BASE_URL}/${month}/${k}.png`);
+				// build sorted list of keys and reverse for last-first
+				let keys = Object.keys(baseObj).sort((a, b) => +a - +b);
+				keys.reverse();
+
+				// store keys and map data
+				baseKeys = keys;
+				bases = keys.map((k) => baseObj[k]);
+
+				// preload images using true keys
+				const urls = keys.map((k) => `${BASE_URL}/${month}/${k}.png`);
 				preloadImages(urls);
 
 				baseIndex = 0;
@@ -213,8 +218,10 @@ docReady(() => {
 			}
 		}
 
-		imgEl.src = `${BASE_URL}/${month}/${baseIndex + 1}.png`;
-		imgEl.alt = `Base ${baseIndex + 1}`;
+		// use baseKeys to load the correct image
+		const key = baseKeys[baseIndex];
+		imgEl.src = `${BASE_URL}/${month}/${key}.png`;
+		imgEl.alt = `Base ${key}`;
 		baseLink.href = entry.url || "#";
 
 		// Populate clan castle troops grid
@@ -246,11 +253,11 @@ docReady(() => {
 		itText.textContent = entry.it || "N/A";
 		xbText.textContent = entry.xb || "N/A";
 
-		currentBaseLabel.textContent = `Base ${baseIndex + 1}`;
+		currentBaseLabel.textContent = `Base ${key}`;
 		updateBaseNav();
 
+		// rebuild buttons window…
 		baseButtonsContainer.innerHTML = "";
-		// determine window of buttons
 		const total = bases.length;
 		const half = Math.floor(MAX_BUTTONS / 2);
 		let start = Math.max(0, baseIndex - half);
@@ -262,7 +269,7 @@ docReady(() => {
 		for (let idx = start; idx < end; idx++) {
 			const btn = document.createElement("button");
 			btn.className = "base-num-btn";
-			btn.textContent = idx + 1;
+			btn.textContent = baseKeys[idx];
 			if (idx === baseIndex) btn.classList.add("active");
 			btn.addEventListener("click", () => {
 				baseIndex = idx;
