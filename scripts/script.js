@@ -49,15 +49,6 @@ docReady(() => {
 	lastBaseBtn.id = "last-base";
 	lastBaseBtn.textContent = "»";
 
-	const gotoInput = document.createElement("input");
-	gotoInput.id = "goto-base-input";
-	gotoInput.type = "number";
-	gotoInput.min = "1";
-	gotoInput.placeholder = "#";
-	const gotoBtn = document.createElement("button");
-	gotoBtn.id = "goto-base-btn";
-	gotoBtn.textContent = "Go";
-
 	const baseButtonsContainer = document.createElement("div");
 	baseButtonsContainer.id = "base-buttons";
 
@@ -67,8 +58,6 @@ docReady(() => {
 		baseButtonsContainer,
 		nextBaseBtn,
 		lastBaseBtn,
-		gotoInput,
-		gotoBtn
 	);
 
 	prevMonthBtn.addEventListener("click", () => {
@@ -99,17 +88,6 @@ docReady(() => {
 	lastBaseBtn.addEventListener("click", () => {
 		baseIndex = bases.length - 1;
 		renderBase();
-	});
-
-	gotoBtn.addEventListener("click", () => {
-		const n = parseInt(gotoInput.value, 10);
-		if (n >= 1 && n <= bases.length) {
-			baseIndex = n - 1;
-			renderBase();
-		}
-	});
-	gotoInput.addEventListener("keypress", (e) => {
-		if (e.key === "Enter") gotoBtn.click();
 	});
 
 	document.addEventListener("keydown", (e) => {
@@ -288,7 +266,6 @@ docReady(() => {
 		prevBaseBtn.disabled = baseIndex === 0;
 		nextBaseBtn.disabled = baseIndex >= bases.length - 1;
 		lastBaseBtn.disabled = baseIndex >= bases.length - 1;
-		gotoInput.max = bases.length;
 	}
 
 	const monthNames = {
