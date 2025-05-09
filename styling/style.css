@@ -262,6 +262,8 @@ body * {
 	position: fixed;
 	border-radius: 25px;
 	z-index: 1;
+	width: max-content;
+	bottom: 1vh;
 }
 
 .cc-item {
@@ -286,7 +288,7 @@ body * {
 #cc-section {
 	bottom: 1vh;
 	right: 28.1vw;
-	width: auto;
+	width: max-content;
 	height: 17vh;
 	justify-content: left;
 	flex-direction: row;
