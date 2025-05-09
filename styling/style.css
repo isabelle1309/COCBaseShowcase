@@ -53,7 +53,7 @@ body * {
 	position: fixed;
 	left: 50vw;
 	transform: translate(-50%);
-	top: 12vh;
+	top: 11vh;
 	text-shadow: black 0px 4px 0px;
 	width: max-content;
 }
