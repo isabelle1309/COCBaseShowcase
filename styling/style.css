@@ -9,7 +9,11 @@ body {
 	border: 0;
 	height: 100%;
 	font-family: "Rockwell", -apple-system, Arial, sans-serif;
-	background: url("../images/desktopbackground.png") center/cover no-repeat;
+	overflow: hidden;
+}
+
+body {
+	background: url("../images/bg.png") center/cover no-repeat;
 	background-size: 100% 100%;
 }
 
@@ -28,12 +32,30 @@ body * {
 /* 2. Navigation & headings         */
 /*──────────────────────────────────*/
 
+#github {
+	position: fixed;
+	left: 1vw;
+	top: 1.5vh;
+	z-index: 1;
+}
+
+#title {
+	position: fixed;
+	left: 50vw;
+	transform: translate(-50%);
+	top: 0vh;
+	font-size: 200%;
+	text-shadow: black 0px 4px 0px;
+	width: max-content;
+}
+
 #nav {
 	position: fixed;
 	z-index: 1;
-	right: 6vw;
-	top: 10vh;
-	padding-top: 1vh;
+	left: 71.5vw;
+	top: 12vh;
+	transform: translate(-50%);
+	width: max-content;
 }
 
 #nav-month,
@@ -63,15 +85,14 @@ body * {
 	color: white;
 }
 
-#current-base{
+#current-base {
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	gap: 0.5rem;
 }
 
-#baseNum,
-#title {
+#baseNum {
 	color: #ff006e;
 }
 
@@ -85,7 +106,7 @@ body * {
 #baseLinkHeader {
 	position: fixed;
 	right: 4vw;
-	top: 74.7vh;
+	top: 75.7vh;
 	font-size: 130%;
 }
 
@@ -109,14 +130,6 @@ body * {
 	height: 36vh !important;
 }
 
-#github {
-	position: fixed;
-	left: 20px;
-	top: 15px;
-	padding: 30px;
-	z-index: 1;
-}
-
 /* Horizontal flex layout for clan castle troops */
 .cc-grid {
 	display: flex;
@@ -125,20 +138,20 @@ body * {
 	gap: 8px;
 	padding: 8px;
 	overflow-x: auto; /* allows scrolling if too many items */
-  }
-  
-  .cc-item {
+}
+
+.cc-item {
 	position: relative;
 	text-align: center;
 	flex: 0 0 auto; /* prevents shrinking */
-  }
-  
-  .cc-item img {
+}
+
+.cc-item img {
 	width: 7.7vw;
 	height: auto;
-  }
-  
-  .cc-count {
+}
+
+.cc-count {
 	position: absolute;
 	bottom: 0;
 	right: 0;
@@ -147,7 +160,7 @@ body * {
 	font-size: 200%;
 	padding: 2px 4px;
 	border-radius: 4px;
-  }
+}
 
 /*──────────────────────────────────*/
 /* 4. Base‐controls & buttons       */
@@ -189,8 +202,17 @@ body * {
 	border-radius: 25px;
 	top: 22.6vh;
 	right: 4.1vw;
-	width: 50.5vw;
-	height: 49.8vh;
+	width: 48vw;
+	height: auto;
+}
+
+#basebg {
+	position: fixed;
+	border-radius: 25px;
+	top: 22.1vh;
+	right: 3.6vw;
+	width: 49vw;
+	height: auto;
 }
 
 .baseSection {
@@ -208,13 +230,51 @@ body * {
 	height: 35.8vh;
 }
 
+#stbg, #xbbg {
+	position: fixed;
+	z-index: 1;
+	width: 20.3vw;
+	height: 35.8vh;
+	border-radius: 25px;
+}
+
+#itbg{
+	position: fixed;	
+	z-index: 1;
+	width: 21vw;
+	height: 75vh;
+	border-radius: 25px;
+}
+
 #spelltower,
 #xbow {
 	height: 22vh;
+	z-index: 2;
+}
+
+#infernotower{
+	height: 36vh;
+	z-index: 2;
+}
+
+#ccbg{
+	position: fixed;	
+	z-index: 1;	
+}
+
+.cc-item {
+	z-index: 2;
+}
+
+#stText,
+#xbText,
+#itText,
+#ccText {
+	z-index: 2;
 }
 
 #xb-section {
-	top: 60vh;
+	top: 61.1vh;
 	left: 1vw;
 	width: 20.3vw;
 	height: 35.8vh;
@@ -222,8 +282,8 @@ body * {
 
 #cc-section {
 	top: 80vh;
-	left: 42.6vw;
-	width: 55.7vw;
+	right: 28.1vw;
+	width: auto;
 	height: 17vh;
 	justify-content: left;
 	flex-direction: row;
@@ -231,7 +291,7 @@ body * {
 
 #it-section {
 	top: 22vh;
-	left: 21.6vw;
+	left: 24vw;
 	width: 21vw;
 	height: 75vh;
 }
@@ -259,7 +319,9 @@ body * {
 		transform: translateX(-50%);
 	}
 
-	*:not(#ratioWarning, html, head, body) { display: none; }	
+	*:not(#ratioWarning, html, head, body) {
+		display: none;
+	}
 
 	/* neutralize any desktop background */
 	html,
@@ -311,7 +373,7 @@ body * {
 		top: 32vh;
 	}
 
-	#current-base{
+	#current-base {
 		top: 9.5vh;
 		left: 100%;
 		transform: translateX(-50%);
@@ -319,7 +381,7 @@ body * {
 		position: fixed;
 	}
 
-	#nav-month{
+	#nav-month {
 		position: relative;
 		top: -1vh;
 	}
