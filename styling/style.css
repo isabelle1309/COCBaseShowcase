@@ -230,7 +230,8 @@ body * {
 	height: 35.8vh;
 }
 
-#stbg, #xbbg {
+#stbg,
+#xbbg {
 	position: fixed;
 	z-index: 1;
 	width: 20.3vw;
@@ -238,8 +239,8 @@ body * {
 	border-radius: 25px;
 }
 
-#itbg{
-	position: fixed;	
+#itbg {
+	position: fixed;
 	z-index: 1;
 	width: 21vw;
 	height: 75vh;
@@ -252,15 +253,15 @@ body * {
 	z-index: 2;
 }
 
-#infernotower{
+#infernotower {
 	height: 36vh;
 	z-index: 2;
 }
 
-#ccbg{
-	position: fixed;	
+#ccbg {
+	position: fixed;
 	border-radius: 25px;
-	z-index: 1;	
+	z-index: 1;
 }
 
 .cc-item {
@@ -275,14 +276,15 @@ body * {
 }
 
 #xb-section {
-	top: 61.1vh;
+	/* top: 61.1vh; */
+	bottom: 1vh;
 	left: 1vw;
 	width: 20.3vw;
 	height: 35.8vh;
 }
 
 #cc-section {
-	top: 80vh;
+	bottom: 1vh;
 	right: 28.1vw;
 	width: auto;
 	height: 17vh;
@@ -291,7 +293,7 @@ body * {
 }
 
 #it-section {
-	top: 22vh;
+	bottom: 1vh;
 	left: 24vw;
 	width: 21vw;
 	height: 75vh;
@@ -354,9 +356,7 @@ body * {
 		font-size: 130%;
 	}
 
-	#st-section,
-	#xb-section,
-	#it-section {
+	#st-section {
 		top: 59vh;
 	}
 
@@ -366,6 +366,7 @@ body * {
 
 	#xb-section {
 		left: 39vw;
+		bottom: 1vh;
 	}
 
 	#it-section {
