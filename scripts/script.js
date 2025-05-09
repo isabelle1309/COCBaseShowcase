@@ -6,7 +6,7 @@ let monthIndex = 0;
 let bases = [];
 let baseKeys = [];
 let baseIndex = 0;
-const MAX_BUTTONS = 10;
+const MAX_BUTTONS = 8;
 
 function preloadImages(urls) {
 	urls.forEach((url) => {
