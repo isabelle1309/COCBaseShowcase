@@ -259,6 +259,7 @@ body * {
 
 #ccbg{
 	position: fixed;	
+	border-radius: 25px;
 	z-index: 1;	
 }
 
