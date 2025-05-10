@@ -213,7 +213,7 @@ docReady(() => {
 		).length;
 
 		if (threeStarCount === 0) {
-			console.log("No 3 star entries found.");
+			miau = `0% 3* rate`
 		} else {
 			const pct = (threeStarCount / totalEntries) * 100;
 			console.log(
