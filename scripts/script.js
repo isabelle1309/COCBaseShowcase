@@ -146,7 +146,7 @@ docReady(() => {
 			imgEl.src = "";
 			[stText, itText, xbText].forEach((el) => (el.textContent = ""));
 			baseButtonsContainer.innerHTML = "";
-			currentBaseLabel.textContent = "Base –";
+			currentBaseLabel.textContent = "Base -";
 			updateBaseNav();
 			return;
 		}
@@ -154,15 +154,26 @@ docReady(() => {
 		const month = months[monthIndex];
 		const entry = bases[baseIndex];
 
-		console.log(entry.stats);
+		const stats = entry.stats || {};
 
-		if (!entry.stats[1]) {
-			console.log("No statistics found.");
+		const totalEntries = Object.keys(stats).length;
+
+		const threeStarCount = Object.values(stats).filter(
+			(stat) => stat.stars === "3"
+		).length;
+
+		if (threeStarCount === 0) {
+			console.log("No 3 star entries found.");
 		} else {
-			for (const statKey in entry.stats) {
-				const statValue = entry.stats[statKey];
-				console.log(`stats[${statKey}] =`, statValue);
-			}
+			const pct = (threeStarCount / totalEntries) * 100;
+			console.log(
+				`Found ${threeStarCount} ${
+					threeStarCount === 1 ? "entry" : "entries"
+				} ` +
+					`with 3 stars — that's ${pct.toFixed(
+						1
+					)}% of all ${totalEntries} entries.`
+			);
 		}
 
 		if (entry.st) {
