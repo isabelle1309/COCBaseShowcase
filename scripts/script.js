@@ -57,7 +57,7 @@ docReady(() => {
 		prevBaseBtn,
 		baseButtonsContainer,
 		nextBaseBtn,
-		lastBaseBtn,
+		lastBaseBtn
 	);
 
 	prevMonthBtn.addEventListener("click", () => {
@@ -153,6 +153,17 @@ docReady(() => {
 
 		const month = months[monthIndex];
 		const entry = bases[baseIndex];
+
+		console.log(entry.stats);
+
+		if (!entry.stats[1]) {
+			console.log("No statistics found.");
+		} else {
+			for (const statKey in entry.stats) {
+				const statValue = entry.stats[statKey];
+				console.log(`stats[${statKey}] =`, statValue);
+			}
+		}
 
 		if (entry.st) {
 			if (entry.st.includes("Rage") && entry.st.includes("Poison")) {
