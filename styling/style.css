@@ -97,9 +97,9 @@ body * {
 }
 
 #baseLink,
-#baseLinkHeader {
+#baseStats {
 	color: white;
-	font-size: 95%;
+	font-size: 85%;
 	text-decoration: none;
 }
 
@@ -108,6 +108,13 @@ body * {
 	position: fixed;
 	bottom: 16.1vh;
 	right: 3.6vw;
+}
+
+#baseStatsHeader {
+	font-size: 200%;
+	position: fixed;
+	bottom: 16.1vh;
+	right: 29vw;
 }
 
 /*──────────────────────────────────*/
