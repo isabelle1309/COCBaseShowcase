@@ -32,10 +32,6 @@ docReady(() => {
 	baseControls.id = "base-controls";
 	navBase.appendChild(baseControls);
 
-	const baseStats = document.getElementById("baseStats");
-	const baseStatsModal = document.getElementById("baseStatsModal");
-	const baseModalClose = document.getElementById("modal-close");
-
 	const imgEl = document.getElementById("baseImg");
 	const ccGrid = document.getElementById("ccGrid");
 	const stText = document.getElementById("stText");
@@ -63,46 +59,6 @@ docReady(() => {
 		nextBaseBtn,
 		lastBaseBtn
 	);
-
-	baseStats.addEventListener("click", () => {
-		const stats = (bases[baseIndex] && bases[baseIndex].stats) || {};
-		const container = document.getElementById("baseData");
-		container.innerHTML = "";
-
-		// If no stats, show a friendly message
-		if (!Object.keys(stats).length) {
-			const p = document.createElement("p");
-			p.textContent = "No statistics available for this base.";
-			container.appendChild(p);
-		} else {
-			// Build one entry per attack
-			const key = baseKeys[baseIndex];
-			const title = document.createElement("p");
-			title.id = 'modalTitle';
-			title.textContent = `Base ${key}`;
-			const percentage = document.createElement("p");
-			percentage.id = "modalPerc";
-			percentage.textContent = miau;
-			container.appendChild(title);
-			container.appendChild(percentage);
-			Object.entries(stats).forEach(([attackNum, stat]) => {
-				const div = document.createElement("div");
-				div.className = "stat-entry";
-				div.textContent =
-					`Attack #${attackNum}: ` +
-					`${stat.stars} star${stat.stars !== "1" ? "s" : ""}` +
-					` (${stat.perc}%)`;
-				container.appendChild(div);
-			});
-		}
-
-		// finally, show the modal
-		baseStatsModal.style.display = "block";
-	});
-
-	baseModalClose.addEventListener("click", () => {
-		baseStatsModal.style.display = "none";
-	});
 
 	prevMonthBtn.addEventListener("click", () => {
 		if (monthIndex > 0) {
@@ -185,12 +141,7 @@ docReady(() => {
 			});
 	}
 
-	var miau = "";
-
 	function renderBase() {
-
-		baseStatsModal.style.display = "none";
-		miau = "";
 
 		if (!bases.length) {
 			imgEl.src = "";
@@ -213,7 +164,7 @@ docReady(() => {
 		).length;
 
 		if (threeStarCount === 0) {
-			miau = `0% 3* rate`
+			miau = `0% 3* rate`;
 		} else {
 			const pct = (threeStarCount / totalEntries) * 100;
 			console.log(
@@ -224,8 +175,7 @@ docReady(() => {
 						1
 					)}% of all ${totalEntries} entries.`
 			);
-			miau = `${pct.toFixed(1).toString()}% 3* rate`
-
+			miau = `${pct.toFixed(1).toString()}% 3* rate`;
 		}
 
 		if (entry.st) {

@@ -672,33 +672,7 @@
 			"st": "2x Poison Towers",
 			"xb": "4x Ground Bows",
 			"url": "https://link.clashofclans.com/fi?action=OpenLayout&id=TH17%3AWB%3AAAAALAAAAAJn-jmy4wONKbpNA_TTReD6",
-			"it": "3x Multi Inferno",
-			"stats": {
-				"1": {
-					"stars": "2",
-					"perc": "89"
-				},
-				"2": {
-					"stars": "1",
-					"perc": "71"
-				},
-				"3": {
-					"stars": "2",
-					"perc": "74"
-				},
-				"4": {
-					"stars": "2",
-					"perc": "87"
-				},
-				"5": {
-					"stars": "2",
-					"perc": "57"
-				},
-				"6": {
-					"stars": "2",
-					"perc": "80"
-				}
-			}
+			"it": "3x Multi Inferno"
 		},
 		"21": {
 			"cc": {
@@ -726,13 +700,7 @@
 			"st": "2x Poison Towers",
 			"xb": "4x Ground Bows",
 			"url": "https://link.clashofclans.com/fi?action=OpenLayout&id=TH17%3AWB%3AAAAALAAAAAJoRSbeDzb5R6SNkLa52_pK",
-			"it": "3x Multi Inferno",
-			"stats": {
-				"": {
-					"stars": "",
-					"perc": ""
-				}
-			}
+			"it": "3x Multi Inferno"
 		}
 	}
 }
