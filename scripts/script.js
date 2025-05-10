@@ -32,6 +32,10 @@ docReady(() => {
 	baseControls.id = "base-controls";
 	navBase.appendChild(baseControls);
 
+	const baseStats = document.getElementById("baseStats");
+	const baseStatsModal = document.getElementById("baseStatsModal");
+	const baseModalClose = document.getElementById("modal-close");
+
 	const imgEl = document.getElementById("baseImg");
 	const ccGrid = document.getElementById("ccGrid");
 	const stText = document.getElementById("stText");
@@ -59,6 +63,14 @@ docReady(() => {
 		nextBaseBtn,
 		lastBaseBtn
 	);
+
+	baseStats.addEventListener("click", () => {
+		baseStatsModal.style.display = "block";
+	});
+
+	baseModalClose.addEventListener("click", () => {
+		baseStatsModal.style.display = "none";
+	});
 
 	prevMonthBtn.addEventListener("click", () => {
 		if (monthIndex > 0) {
