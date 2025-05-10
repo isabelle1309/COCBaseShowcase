@@ -65,6 +65,38 @@ docReady(() => {
 	);
 
 	baseStats.addEventListener("click", () => {
+		const stats = (bases[baseIndex] && bases[baseIndex].stats) || {};
+		const container = document.getElementById("baseData");
+		container.innerHTML = "";
+
+		// If no stats, show a friendly message
+		if (!Object.keys(stats).length) {
+			const p = document.createElement("p");
+			p.textContent = "No statistics available for this base.";
+			container.appendChild(p);
+		} else {
+			// Build one entry per attack
+			const key = baseKeys[baseIndex];
+			const title = document.createElement("p");
+			title.id = 'modalTitle';
+			title.textContent = `Base ${key}`;
+			const percentage = document.createElement("p");
+			percentage.id = "modalPerc";
+			percentage.textContent = miau;
+			container.appendChild(title);
+			container.appendChild(percentage);
+			Object.entries(stats).forEach(([attackNum, stat]) => {
+				const div = document.createElement("div");
+				div.className = "stat-entry";
+				div.textContent =
+					`Attack #${attackNum}: ` +
+					`${stat.stars} star${stat.stars !== "1" ? "s" : ""}` +
+					` (${stat.perc}%)`;
+				container.appendChild(div);
+			});
+		}
+
+		// finally, show the modal
 		baseStatsModal.style.display = "block";
 	});
 
@@ -153,7 +185,13 @@ docReady(() => {
 			});
 	}
 
+	var miau = "";
+
 	function renderBase() {
+
+		baseStatsModal.style.display = "none";
+		miau = "";
+
 		if (!bases.length) {
 			imgEl.src = "";
 			[stText, itText, xbText].forEach((el) => (el.textContent = ""));
@@ -186,6 +224,8 @@ docReady(() => {
 						1
 					)}% of all ${totalEntries} entries.`
 			);
+			miau = `${pct.toFixed(1).toString()}% 3* rate`
+
 		}
 
 		if (entry.st) {

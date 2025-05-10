@@ -120,15 +120,54 @@ body * {
 #baseStatsModal {
 	position: fixed;
 	left: 50vw;
-	top: 20vh;
+	top: 40vh;
 	width: auto;
 	transform: translate(-50%);
 	display: none;
 	background: url(../images/spelltower.png) no-repeat center;
 	border-radius: 25px;
-	padding-bottom: 11vw;
-	padding-left: 10vw;
-	padding-right: 10vw;
+	padding: 3vw;
+}
+
+#modal-close img {
+	position: fixed;
+	top: 0;
+	right: 0;
+	padding: 1vw;
+	width: 15%;
+	height: auto;
+}
+
+#baseStatsTitle {
+	position: fixed;
+	top: 0;
+	left: 50%;
+	transform: translate(-50%);
+}
+
+/* constrain the stats list to 3 items’ worth of height, then scroll */
+#baseData {
+	max-height: calc(3 * 1.5em); /* roughly three lines of text */
+	overflow-y: auto;
+	padding-right: 0.5em; /* room for the scrollbar */
+	margin-top: 8vh;
+}
+#baseData .stat-entry {
+	margin-bottom: 0.5em;
+}
+
+#modalTitle {
+	position: fixed;
+	top: 4vh;
+	left: 50%;
+	transform: translate(-50%);
+}
+
+#modalPerc {
+	position: fixed;
+	top: 7vh;
+	left: 50%;
+	transform: translate(-50%);
 }
 
 /*──────────────────────────────────*/
