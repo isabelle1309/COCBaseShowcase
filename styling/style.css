@@ -310,8 +310,11 @@ body * {
 /*    — placed last to win by cascade */
 /*──────────────────────────────────*/
 
+/*
+
+
 @media screen and (max-width: 810px) {
-	/* show warning at narrow widths */
+	
 	#ratioWarning {
 		display: block;
 		position: fixed;
@@ -328,14 +331,12 @@ body * {
 		display: none;
 	}
 
-	/* neutralize any desktop background */
 	html,
 	body {
 		background: none !important;
 		background-image: none !important;
 	}
 
-	/* reposition & resize base image */
 	#baseImg {
 		top: 17vh;
 		right: 22.1vw;
@@ -343,7 +344,6 @@ body * {
 		height: 26.8vh;
 	}
 
-	/* adjust navigation for small screens */
 	#nav {
 		top: 4vh;
 		left: 50%;
@@ -351,7 +351,6 @@ body * {
 		width: 100%;
 	}
 
-	/* bump up link header size */
 	#baseLinkHeader {
 		right: 27vw;
 		top: 42.7vh;
@@ -390,3 +389,4 @@ body * {
 		top: -1vh;
 	}
 }
+*/
