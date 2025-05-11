@@ -376,22 +376,27 @@ body * {
 	}
 
 	#cc-section{
-		bottom: 28vh;
+		bottom: 26.3vh;
 		left: 4.4vw;
-		height: 19vh;
+		/* height: 19vh; */
 	}
 
 	#ccbg{
 		width: 67.4vw;
 		bottom: 29vh;
+		height: 12vh;
 	}
 
 	.cc-item img{
-		width: 12.7vw;
+		width: 8.7vw;
 	}
 
 		#baseLinkHeader{
 		bottom: 40vh;
+	}
+
+	.cc-count{
+		font-size: 150%;
 	}
 }
 
@@ -411,5 +416,9 @@ body * {
 
 	#infernotower{
 		height: 15vh;
+	}
+
+		.cc-count{
+		font-size: 100%;
 	}
 }
