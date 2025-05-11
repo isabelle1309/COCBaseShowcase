@@ -265,6 +265,7 @@ body * {
 	width: 41.4vw;
 	height: 17vh;
 	bottom: 1vh;
+	opacity: 50%;
 }
 
 .cc-item {
