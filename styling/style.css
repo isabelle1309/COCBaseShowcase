@@ -96,7 +96,7 @@ body * {
 	color: #ff006e;
 }
 
-#baseLink{
+#baseLink {
 	color: white;
 	font-size: 85%;
 	text-decoration: none;
@@ -126,7 +126,7 @@ body * {
 }
 
 #infernotower {
-	height: 36vh !important;
+	height: 36vh;
 }
 
 /* Horizontal flex layout for clan castle troops */
@@ -242,8 +242,9 @@ body * {
 	position: fixed;
 	z-index: 1;
 	width: 21vw;
-	height: 75vh;
+	height: 77vh;
 	border-radius: 25px;
+	bottom: 1vh;
 }
 
 #spelltower,
@@ -310,83 +311,105 @@ body * {
 /*    — placed last to win by cascade */
 /*──────────────────────────────────*/
 
-/*
-
-
-@media screen and (max-width: 810px) {
-	
-	#ratioWarning {
-		display: block;
-		position: fixed;
-		color: red;
-		font-weight: bold;
-		font-size: 120%;
-		text-shadow: black 2px 2px;
-		top: 41%;
-		left: 50%;
-		transform: translateX(-50%);
-	}
-
-	*:not(#ratioWarning, html, head, body) {
-		display: none;
-	}
-
-	html,
-	body {
-		background: none !important;
-		background-image: none !important;
-	}
-
+@media screen and (max-width: 1080px) {
+	#basebg,
 	#baseImg {
-		top: 17vh;
-		right: 22.1vw;
-		width: 50.5vw;
-		height: 26.8vh;
-	}
-
-	#nav {
-		top: 4vh;
+		top: 21vh;
+		right: unset;
 		left: 50%;
-		transform: translateX(-50%);
-		width: 100%;
+		transform: translate(-50%);
+		width: 525px;
 	}
 
-	#baseLinkHeader {
-		right: 27vw;
-		top: 42.7vh;
-		font-size: 130%;
+	#st-section,
+	#it-section,
+	#xb-section {
+		bottom: 0;
+		top: unset;
+		left: unset;
+		right: unset;
 	}
 
 	#st-section {
-		top: 59vh;
-	}
-
-	#st-section {
-		left: 4vw;
+		left: 8vw;
 	}
 
 	#xb-section {
-		left: 39vw;
+		left: 43.5vw;
+		height: 26.8vh;
+	}
+
+	#stText,
+	#itText {
+		width: max-content;
+	}
+
+	#stbg,
+	#xbbg {
+		width: 28vw;
+		height: 25vh;
+	}
+	#xbText {
+		width: auto;
+	}
+
+	#spelltower, #xbow{
+		height: 18vw;
+	}
+
+	#infernotower{
+		height: 23vh;
+	}
+
+	#itbg{
+		height: 45vh;
 		bottom: 1vh;
 	}
 
-	#it-section {
-		left: unset;
+	#it-section{
 		right: 4vw;
-		top: 32vh;
+		height: 50vh;
 	}
 
-	#current-base {
-		top: 9.5vh;
-		left: 100%;
-		transform: translateX(-50%);
-		width: 100%;
-		position: fixed;
+	#st-section{
+		height: 26.8vh;
 	}
 
-	#nav-month {
-		position: relative;
-		top: -1vh;
+	#cc-section{
+		bottom: 28vh;
+		left: 4.4vw;
+		height: 19vh;
+	}
+
+	#ccbg{
+		width: 67.4vw;
+		bottom: 29vh;
+	}
+
+	.cc-item img{
+		width: 12.7vw;
+	}
+
+		#baseLinkHeader{
+		bottom: 40vh;
 	}
 }
-*/
+
+@media screen and (max-width: 526px) {
+	#basebg,
+	#baseImg {
+		top: 21vh;
+		right: unset;
+		left: 50%;
+		transform: translate(-50%);
+		width: 93vw;
+	}
+
+		#stText, #itText, #xbText {
+		width: auto;
+	}
+
+	#infernotower{
+		height: 15vh;
+	}
+}
