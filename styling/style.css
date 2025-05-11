@@ -236,6 +236,7 @@ body * {
 	width: 20.3vw;
 	height: 35.8vh;
 	border-radius: 25px;
+	opacity: 50%;
 }
 
 #itbg {
@@ -245,6 +246,7 @@ body * {
 	height: 77vh;
 	border-radius: 25px;
 	bottom: 1vh;
+	opacity: 50%;
 }
 
 #spelltower,
