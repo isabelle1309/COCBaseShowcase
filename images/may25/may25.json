@@ -785,6 +785,118 @@
 			"xb": "4x Ground Bows",
 			"url": "https://link.clashofclans.com/fi?action=OpenLayout&id=TH17%3AWB%3AAAAALAAAAAJoZloB-k3Ig_4ckNoWmI6x",
 			"it": "3x Multi Inferno"
+		},
+		"25": {
+			"cc": {
+				"1": {
+					"name": "Ice Golem",
+					"amount": "3"
+				},
+				"2": {
+					"name": "Archer",
+					"amount": "10"
+				},
+				"3": {
+					"name": "",
+					"amount": ""
+				},
+				"4": {
+					"name": "",
+					"amount": ""
+				},
+				"5": {
+					"name": "",
+					"amount": ""
+				}
+			},
+			"st": "2x Rage Towers",
+			"xb": "4x Ground Bows",
+			"url": "https://link.clashofclans.com/fi?action=OpenLayout&id=TH17%3AWB%3AAAAALAAAAAJoi7op_egUnHDJRXSsuppt",
+			"it": "3x Multi Inferno"
+		},
+		"26": {
+			"cc": {
+				"1": {
+					"name": "Ice Golem",
+					"amount": "2"
+				},
+				"2": {
+					"name": "Furnace",
+					"amount": "1"
+				},
+				"3": {
+					"name": "Archer",
+					"amount": "7"
+				},
+				"4": {
+					"name": "",
+					"amount": ""
+				},
+				"5": {
+					"name": "",
+					"amount": ""
+				}
+			},
+			"st": "2x Poison Towers",
+			"xb": "4x Ground Bows",
+			"url": "https://link.clashofclans.com/fi?action=OpenLayout&id=TH17%3AWB%3AAAAALAAAAAJoittWz5I2ioS4Oo1m2xbr",
+			"it": "3x Multi Inferno"
+		},
+		"27": {
+			"cc": {
+				"1": {
+					"name": "Ice Golem",
+					"amount": "2"
+				},
+				"2": {
+					"name": "Furnace",
+					"amount": "1"
+				},
+				"3": {
+					"name": "Archer",
+					"amount": "7"
+				},
+				"4": {
+					"name": "",
+					"amount": ""
+				},
+				"5": {
+					"name": "",
+					"amount": ""
+				}
+			},
+			"st": "2x Poison Towers",
+			"xb": "4x Ground Bows",
+			"url": "https://link.clashofclans.com/fi?action=OpenLayout&id=TH17%3AWB%3AAAAALAAAAAJoi00NNPRMIXbtM1ND6hxd",
+			"it": "3x Multi Inferno"
+		},
+		"28": {
+			"cc": {
+				"1": {
+					"name": "Ice Golem",
+					"amount": "3"
+				},
+				"2": {
+					"name": "Archer",
+					"amount": "10"
+				},
+				"3": {
+					"name": "",
+					"amount": ""
+				},
+				"4": {
+					"name": "",
+					"amount": ""
+				},
+				"5": {
+					"name": "",
+					"amount": ""
+				}
+			},
+			"st": "2x Rage Towers",
+			"xb": "4x Ground Bows",
+			"url": "https://link.clashofclans.com/fi?action=OpenLayout&id=TH17%3AWB%3AAAAALAAAAAJoitvnlOT6vbr8uGc0qmEb",
+			"it": "3x Multi Inferno"
 		}
 	}
 }
